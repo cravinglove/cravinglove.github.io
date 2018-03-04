@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="一往无前，不忘初心 谨以本系列文章记录我的js学习之路! 变量类型分为值类型和引用类型。var a = 100;  var b = a;  a = 200;  console.log(b);   //100这就是值类型，变量之间不会相互影响，a位置存的就是一个数字，b位置野村的是相同的数字而已 var a = {age:20}; var b = a; b.age = 21; console.log">
+<meta name="description" content="一往无前，不忘初心 谨以本系列文章记录我的js学习之路! 变量类型分为值类型和引用类型。1234var a = 100;var b = a;a = 200;console.log(b);   //100 这就是值类型，变量之间不会相互影响，a位置存的就是一个数字，b位置野村的是相同的数字而已 1234var a = &amp;#123;age:20&amp;#125;;var b = a;b.age = 21;c">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="变量类型和计算">
 <meta property="og:url" content="http://yoursite.com/2017/12/30/变量类型与计算/index.html">
 <meta property="og:site_name" content="Macon&#39;s Blog">
-<meta property="og:description" content="一往无前，不忘初心 谨以本系列文章记录我的js学习之路! 变量类型分为值类型和引用类型。var a = 100;  var b = a;  a = 200;  console.log(b);   //100这就是值类型，变量之间不会相互影响，a位置存的就是一个数字，b位置野村的是相同的数字而已 var a = {age:20}; var b = a; b.age = 21; console.log">
+<meta property="og:description" content="一往无前，不忘初心 谨以本系列文章记录我的js学习之路! 变量类型分为值类型和引用类型。1234var a = 100;var b = a;a = 200;console.log(b);   //100 这就是值类型，变量之间不会相互影响，a位置存的就是一个数字，b位置野村的是相同的数字而已 1234var a = &amp;#123;age:20&amp;#125;;var b = a;b.age = 21;c">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-03T08:26:53.177Z">
+<meta property="og:updated_time" content="2018-03-04T13:00:10.174Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="变量类型和计算">
-<meta name="twitter:description" content="一往无前，不忘初心 谨以本系列文章记录我的js学习之路! 变量类型分为值类型和引用类型。var a = 100;  var b = a;  a = 200;  console.log(b);   //100这就是值类型，变量之间不会相互影响，a位置存的就是一个数字，b位置野村的是相同的数字而已 var a = {age:20}; var b = a; b.age = 21; console.log">
+<meta name="twitter:description" content="一往无前，不忘初心 谨以本系列文章记录我的js学习之路! 变量类型分为值类型和引用类型。1234var a = 100;var b = a;a = 200;console.log(b);   //100 这就是值类型，变量之间不会相互影响，a位置存的就是一个数字，b位置野村的是相同的数字而已 1234var a = &amp;#123;age:20&amp;#125;;var b = a;b.age = 21;c">
 
 
 
@@ -365,33 +365,29 @@
       
         <h2 id="一往无前，不忘初心"><a href="#一往无前，不忘初心" class="headerlink" title="一往无前，不忘初心"></a>一往无前，不忘初心</h2><hr>
 <p>谨以本系列文章记录我的js学习之路!</p>
-<p>变量类型分为值类型和引用类型。<br><code>var a = 100;
- var b = a;
- a = 200;
- console.log(b);   //100</code><br>这就是值类型，变量之间不会相互影响，a位置存的就是一个数字，b位置野村的是相同的数字而已</p>
-<p><code>var a = {age:20};
-var b = a;
-b.age = 21;
-console.log(a.age)  //21</code><br>引用类型（包含数组，对象和函数）的变量之间会互相影响，a位置存的是一个指针指向该对象，实际上对象存在另外的地方，定义的b存放的指针也指向该对象，所以修改了对象的指针，为了让内存共用空间才出现了引用类型。</p>
+<p>变量类型分为值类型和引用类型。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">var</span> b = a;</span><br><span class="line">a = <span class="number">200</span>;</span><br><span class="line"><span class="built_in">console</span>.log(b);   <span class="comment">//100</span></span><br></pre></td></tr></table></figure></p>
+<p>这就是值类型，变量之间不会相互影响，a位置存的就是一个数字，b位置野村的是相同的数字而已</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;<span class="attr">age</span>:<span class="number">20</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> b = a;</span><br><span class="line">b.age = <span class="number">21</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a.age);  <span class="comment">//21</span></span><br></pre></td></tr></table></figure>
+<p>引用类型（包含数组，对象和函数）的变量之间会互相影响，a位置存的是一个指针指向该对象，实际上对象存在另外的地方，定义的b存放的指针也指向该对象，所以修改了对象的指针，为了让内存共用空间才出现了引用类型。</p>
 <a id="more"></a>
 <hr>
-<h3 id="JS使用typeof可以得到的类型"><a href="#JS使用typeof可以得到的类型" class="headerlink" title="JS使用typeof可以得到的类型"></a>JS使用typeof可以得到的类型</h3><pre><code>typeof一共有五种形式，分别是undefined,object,string,boolean,symbol,function和number,注意typeof null也是object！只能区分值类型，不能区分除函数外的其他引用类型。
-</code></pre><hr>
+<h3 id="JS使用typeof可以得到的类型"><a href="#JS使用typeof可以得到的类型" class="headerlink" title="JS使用typeof可以得到的类型"></a>JS使用typeof可以得到的类型</h3><p>typeof一共有五种形式，分别是undefined,object,string,boolean,symbol,function和number,注意typeof null也是object！只能区分值类型，不能区分除函数外的其他引用类型。</p>
+<hr>
 <h3 id="值类型的强制类型转换"><a href="#值类型的强制类型转换" class="headerlink" title="值类型的强制类型转换"></a>值类型的强制类型转换</h3><ol>
-<li>字符串拼接<br> <code>var a = 100 + 10;    // 110
-  var b = 100 + &#39;10&#39;   //  10010</code></li>
-<li>==运算符<br> <code>100 == &#39;100&#39;; //true
- 0 == &#39; &#39;; //true
- null == underfined  //true</code></li>
-<li>if语句<br> 0，NaN，空字符串，null,undefined,false转换为false</li>
+<li><p>字符串拼接</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">100</span> + <span class="number">10</span>;  <span class="comment">// 110</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="number">100</span> + <span class="string">'10'</span>;  <span class="comment">//  10010</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>==运算符</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">100</span> == <span class="string">'100'</span>; <span class="comment">//true</span></span><br><span class="line"><span class="number">0</span> == <span class="string">' '</span>; <span class="comment">//true</span></span><br><span class="line"><span class="literal">null</span> == underfined  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>if语句<br> 0，NaN，空字符串，null,undefined,false转换为false</p>
+</li>
 <li>逻辑运算</li>
 </ol>
 <hr>
-<h3 id="何时使用"><a href="#何时使用" class="headerlink" title="何时使用==="></a>何时使用===</h3><pre><code>三等无类型转换，
-`if(obj.a == null) {
-    // 这里相当于obj.a === null || obj.a === undefined
-}`,除此之外，全部用三等。
-</code></pre><hr>
+<h3 id="何时使用"><a href="#何时使用" class="headerlink" title="何时使用==="></a>何时使用===</h3><p>三等无类型转换，<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(obj.a == <span class="literal">null</span>) &#123;</span><br><span class="line">  <span class="comment">// 这里相当于obj.a === null || obj.a === undefined</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>除此之外，全部用三等。</p>
+<hr>
 <h3 id="JS的内置函数"><a href="#JS的内置函数" class="headerlink" title="JS的内置函数"></a>JS的内置函数</h3><p>不考虑运行环境，内置的数据封装类对象有如下9种</p>
 <ol>
 <li>Object</li>
@@ -405,11 +401,10 @@ console.log(a.age)  //21</code><br>引用类型（包含数组，对象和函数
 <li>Error</li>
 </ol>
 <hr>
-<h3 id="JS按照存储方式分为几种类型"><a href="#JS按照存储方式分为几种类型" class="headerlink" title="JS按照存储方式分为几种类型"></a>JS按照存储方式分为几种类型</h3><pre><code>分为值类型和引用类型。
-引用类型是变量指针的赋值。
-</code></pre><hr>
-<h3 id="如何理解JSON"><a href="#如何理解JSON" class="headerlink" title="如何理解JSON"></a>如何理解JSON</h3><pre><code>JSON不是函数，和Math一样是个内置对象，常用的有两个方法，分别是字符串转对象和对象转字符串的parse和stringify方法
-</code></pre><hr>
+<h3 id="JS按照存储方式分为几种类型"><a href="#JS按照存储方式分为几种类型" class="headerlink" title="JS按照存储方式分为几种类型"></a>JS按照存储方式分为几种类型</h3><p>分为值类型和引用类型。<br>引用类型是变量指针的赋值。</p>
+<hr>
+<h3 id="如何理解JSON"><a href="#如何理解JSON" class="headerlink" title="如何理解JSON"></a>如何理解JSON</h3><p>JSON不是函数，和Math一样是个内置对象，常用的有两个方法，分别是字符串转对象和对象转字符串的parse和stringify方法</p>
+<hr>
 <p>2017 年 12月 30日</p>
 
       
