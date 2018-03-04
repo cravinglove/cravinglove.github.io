@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="年终总结," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一往无前，不忘初心 一直以来都想自己搭建个博客来记录下自己的学习历程和生活点滴，本来是想要用PHP从头搭建一个博客系统，不过刚好在这段时间在学习Vue，在很偶然的机会下，知道了Hexo这个基于Nodejs的博客搭建框架，便去繁从简，索性阅读了官方文档，选择了GitHub上star数目最多的Next主题，打算以此开始来记录下我在开发中的一些学习心得，既可以作为自己的学习笔记，也可以部署到GitHub">
+<meta name="keywords" content="年终总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2017年年终总结">
+<meta property="og:url" content="http://yoursite.com/2017/12/28/17年终总结/index.html">
+<meta property="og:site_name" content="Macon&#39;s Blog">
+<meta property="og:description" content="一往无前，不忘初心 一直以来都想自己搭建个博客来记录下自己的学习历程和生活点滴，本来是想要用PHP从头搭建一个博客系统，不过刚好在这段时间在学习Vue，在很偶然的机会下，知道了Hexo这个基于Nodejs的博客搭建框架，便去繁从简，索性阅读了官方文档，选择了GitHub上star数目最多的Next主题，打算以此开始来记录下我在开发中的一些学习心得，既可以作为自己的学习笔记，也可以部署到GitHub">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-12-30T04:53:37.685Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2017年年终总结">
+<meta name="twitter:description" content="一往无前，不忘初心 一直以来都想自己搭建个博客来记录下自己的学习历程和生活点滴，本来是想要用PHP从头搭建一个博客系统，不过刚好在这段时间在学习Vue，在很偶然的机会下，知道了Hexo这个基于Nodejs的博客搭建框架，便去繁从简，索性阅读了官方文档，选择了GitHub上star数目最多的Next主题，打算以此开始来记录下我在开发中的一些学习心得，既可以作为自己的学习笔记，也可以部署到GitHub">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/12/28/17年终总结/"/>
+
+
+
+
+
+  <title>2017年年终总结 | Macon's Blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?291962ff174733e0d36d0af926f2a36e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Macon's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/28/17年终总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="马国航">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Macon's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">2017年年终总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-28T20:46:25+08:00">
+                2017-12-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/年终总结/" itemprop="url" rel="index">
+                    <span itemprop="name">年终总结</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/12/28/17年终总结/" class="leancloud_visitors" data-flag-title="2017年年终总结">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="一往无前，不忘初心"><a href="#一往无前，不忘初心" class="headerlink" title="一往无前，不忘初心"></a>一往无前，不忘初心</h2><hr>
+<p>一直以来都想自己搭建个博客来记录下自己的学习历程和生活点滴，本来是想要用<strong>PHP</strong>从头搭建一个博客系统，不过刚好在这段时间在学习<strong>Vue</strong>，在很偶然的机会下，知道了<strong>Hexo</strong>这个基于<strong>Nodejs</strong>的博客搭建框架，便去繁从简，索性阅读了官方文档，选择了<strong>GitHub</strong>上<em>star</em>数目最多的<strong>Next</strong>主题，打算以此开始来记录下我在开发中的一些学习心得，既可以作为自己的学习笔记，也可以部署到<strong>GitHub</strong>供大家学习和指正。刚好马上到2017年年底，便打算将对2017年的总结作为我博客的第一篇文章。<a id="more"></a></p>
+<hr>
+<h3 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h3><p>在2017年年初的时候，一个很偶然的机会下，我知道了<strong>JavaScript</strong>这门编程语言，了解到这是一个负责网站前端表现的脚本语言。由于一直以来对视觉表现美的追求，我渐渐地对网站的实现产生了浓厚的兴趣。于是，和大多数人一样，在慕课网上首先学习了基础的<strong>HTML</strong>和<strong>CSS</strong>，但是慕课网的<strong>HTML</strong>和<strong>CSS</strong>的教程相对基础，只是讲解了一些<strong>HTML</strong>和<strong>CSS</strong>中一些基本的规则，对一些需要深入理解的知识并未面面俱到。后来知道了百度前端技术学院这个平台，遂利用所学的<strong>HTML</strong>和<strong>CSS</strong>完成了前几个网页实现的作业。后来，意识到<strong>HTML</strong>和<strong>CSS</strong>并不是编程语言，因而开始了对于<strong>JS</strong>的学习。在拜读了<strong>《JavaScript Dom 编程艺术》</strong>，<strong>《JavaScript高级程序设计》</strong>之后，陆续做了<strong>百度前端学院</strong>和<strong>Freecodecamp</strong>上面的一些原生<strong>JS</strong>项目。渐渐感觉原生代码是如此繁琐，刚好在阅读别人博客的过程中，知道了一些库和框架的存在，最开始接触的是<strong>jQuery</strong>，通过阅读<strong>《锋利的jQuery》</strong>一书基本了解了<strong>jQuery</strong>的一些用法，深感开发可以如此便捷，也因此意识到不断学习新技术的重要性，往往原生<strong>JS</strong>中几行代码，通过<strong>jQuery</strong>一行就可以完成，实在是为开发人员带来了诸多便利。2017年的十月份，参加了校内某俱乐部的面试，当时给出的题目是一个“打飞机”游戏的<strong>JS</strong>实现，于是在完成题目的过程中，学习了<strong>Canvas</strong>的基本操作以及一些碰撞检测算法的实现。在后来验收的过程中，被问到对于<strong>JS</strong>框架的学习，虽然之前有听说过当下主流三大<strong>JS</strong>框架，但并没有深入学习，便决定回去之后选择其中一个来学习，最终还是从同为国人的尤雨溪开发的<strong>Vue</strong>开始了我对<strong>JS</strong>框架的学习，在对<strong>Vue</strong>的学习中，渐渐地被<strong>Vue</strong>的易用性、灵活性、高效性所吸引，并且对模块化开发有了一定的认识，也陆续接触了<strong>Webpack</strong>，<strong>Babel</strong>，<strong>Node</strong>这些当下比较流行的技术。为了加深对<strong>Vue</strong>的认识，最近有在做一个吉他谱的分享网站，实现注册登录分享等一些功能，在做项目的过程中，进一步加深了对开发中前后端分离的理解，还算是颇有收获。</p>
+<p>总之，2017年里，在保证自己自动化学业课程完成的情况下，完成了对<strong>JS</strong>基础以及一些库和框架使用的学习。2018年里，还要继续巩固<strong>JS基础</strong>的学习以及<strong>ES6</strong>新语法，<strong>Nodejs</strong>,<strong>React</strong>等的学习，紧跟当下技术发展的方向，同时要恶补因非科班出身而较缺失的<strong>数据结构与算法</strong>知识，初步建立自身的技术学习体系。</p>
+<hr>
+<h3 id="音乐"><a href="#音乐" class="headerlink" title="音乐"></a>音乐</h3><p>从2015年年底开始弹吉他开始，大约也有两年的时间了，从最初几个和弦的弹唱到创作，再到如今发展为对音乐本身的学习，我想大概是因为真的热爱。从十岁那年听的人生中第一次单曲循环的<strong>逍遥叹</strong>开始，也过去了十二个春秋。十二年来，听的音乐的风格在不断地变化，深深感觉到有些时候，话语往往显得过分苍白，于是便渐渐地想要用音乐去表达一些东西。所幸在大学期间加入了<strong>吉协</strong>，认识到了一些很有创作才能的朋友，也从他们身上学到了许多东西。今年参加的<strong>新声代</strong>在聆听大家唱歌的时候，也在不断感受不同的人对于音乐的表达方式的差异。而最要庆幸的是，在比赛的过程中认识了<strong>康师傅</strong>，精彩的键盘表演让我对音乐有了新的理解，也藉此想要更加系统的学习音乐，遂买了电子琴，一切从零开始。</p>
+<p>2018年，在学习基本音乐理论的同时，预期学习<strong>《勋伯格和声学》</strong>，<strong>《作曲基本原理》</strong>，在音乐的学习路上洒一腔热爱。<br><iframe src="//music.163.com/outchain/player?type=3&id=901554058&auto=1&height=66" width="330" height="86" frameborder="0" allowfullscreen></iframe></p>
+<hr>
+<h3 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h3><p>2017年，遇见了很多的人，看见了许多的事。</p>
+<p><em>1</em>月在疾驰的火车上看绿叶渐渐被霜染<br>在长春的街头<br>在铁岭的夜里<br><em>2</em>月是家乡脚下的寒凉<br><em>3</em>月是紫荆的喜欢<br><em>4</em>月是日落黄昏的海上<br>静静在等待暮色降临的繁星<br><em>5</em>月是海岛三人远去的背影<br><em>6</em>月在塘前月色下静待花开<br><em>7</em>月是塞北的石窟佛前下的肃穆<br>午夜的小摊里诉说着平凡<br>在金雕飞起的乌兰察布<br>却也未曾经过大草原的湖边<br><em>8</em>月是夏日中故乡的清凉<br><em>9</em>月天边拂晓下的微笑<br>也不再寂寥<br><em>10</em>月是十九大背景下的不忘初心<br><em>11</em>月是灯光背后的谢绝尘嚣<br><em>12</em>月是考试月</p>
+<hr>
+<p>2017 年 12月 29日    </p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>原创技术分享,爱您哟</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="马国航 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="马国航 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/年终总结/" rel="tag"># 年终总结</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/30/变量类型与计算/" rel="prev" title="变量类型和计算">
+                变量类型和计算 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjc1NC85MzE1"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="马国航" />
+            
+              <p class="site-author-name" itemprop="name">马国航</p>
+              <p class="site-description motion-element" itemprop="description">用代码书写人生，用音乐诠释生活</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/cravinglove" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:guohangma@gmail.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://weibo.com/3315582295/profile?topnav=1&wvr=6&is_all=1" target="_blank" title="微博">
+                    
+                      <i class="fa fa-fw fa-globe"></i>微博</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一往无前，不忘初心"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x4E00;&#x5F80;&#x65E0;&#x524D;&#xFF0C;&#x4E0D;&#x5FD8;&#x521D;&#x5FC3;" class="headerlink" title="&#x4E00;&#x5F80;&#x65E0;&#x524D;&#xFF0C;&#x4E0D;&#x5FD8;&#x521D;&#x5FC3;"></a>&#x4E00;&#x5F80;&#x65E0;&#x524D;&#xFF0C;&#x4E0D;&#x5FD8;&#x521D;&#x5FC3;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#学习"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#&#x5B66;&#x4E60;" class="headerlink" title="&#x5B66;&#x4E60;"></a>&#x5B66;&#x4E60;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#音乐"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#&#x97F3;&#x4E50;" class="headerlink" title="&#x97F3;&#x4E50;"></a>&#x97F3;&#x4E50;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生活"><span class="nav-number">1.3.</span> <span class="nav-text"><a href="#&#x751F;&#x6D3B;" class="headerlink" title="&#x751F;&#x6D3B;"></a>&#x751F;&#x6D3B;</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">马国航</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("E7c1GBJunsBo04LGNRA1Fzk0-gzGzoHsz", "aPr4FXuLhzMi1mbeDokSTeuv");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

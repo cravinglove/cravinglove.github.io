@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一往无前，不忘初心 谨以本系列文章记录我的js学习之路!   构造函数大写字母开头，通过构造函数可以创建多个对象，  function Foo(name, age){       this.name=name       this.age  = age       this.class = &amp;#39;class-1&amp;#39;       // return this默认返回this实例对象   }">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="原型和原型链">
+<meta property="og:url" content="http://yoursite.com/2017/12/31/原型和原型链/index.html">
+<meta property="og:site_name" content="Macon&#39;s Blog">
+<meta property="og:description" content="一往无前，不忘初心 谨以本系列文章记录我的js学习之路!   构造函数大写字母开头，通过构造函数可以创建多个对象，  function Foo(name, age){       this.name=name       this.age  = age       this.class = &amp;#39;class-1&amp;#39;       // return this默认返回this实例对象   }">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-03T14:53:21.201Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="原型和原型链">
+<meta name="twitter:description" content="一往无前，不忘初心 谨以本系列文章记录我的js学习之路!   构造函数大写字母开头，通过构造函数可以创建多个对象，  function Foo(name, age){       this.name=name       this.age  = age       this.class = &amp;#39;class-1&amp;#39;       // return this默认返回this实例对象   }">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/12/31/原型和原型链/"/>
+
+
+
+
+
+  <title>原型和原型链 | Macon's Blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?291962ff174733e0d36d0af926f2a36e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Macon's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/31/原型和原型链/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="马国航">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Macon's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">原型和原型链</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-31T20:46:25+08:00">
+                2017-12-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/12/31/原型和原型链/" class="leancloud_visitors" data-flag-title="原型和原型链">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="一往无前，不忘初心"><a href="#一往无前，不忘初心" class="headerlink" title="一往无前，不忘初心"></a>一往无前，不忘初心</h2><hr>
+<p>谨以本系列文章记录我的js学习之路!</p>
+<p>  构造函数大写字母开头，通过构造函数可以创建多个对象，<br>  <code>function Foo(name, age){
+      this.name=name
+      this.age  = age
+      this.class = &#39;class-1&#39;
+      // return this默认返回this实例对象
+  }
+  var f  = new Foo(&#39;zhnagsan&#39;, 20)</code><a id="more"></a></p>
+<ol>
+<li>var a = {}是var a = new Object()的语法糖</li>
+<li>var a = []是var a = new Array()的语法糖</li>
+<li>function Foo(){}是var Foo = new Function(..)</li>
+<li><p>使用instanceof判断一个函数是否是一个变量的构造函数</p>
+</li>
+<li><p>所有引用类型，包括数组对象函数都可以自由扩展属性（除了null对象）<br><code>var obj = {};obj.a = 100;
+var arr = [];arr.a = 100;
+function fn () {}
+fn.a = 100;</code></p>
+</li>
+<li>都有一个<em>proto</em>（隐式原型）属性，为一个普通对象<br><code>console.log(obj._proto_);
+console.log(arr._proto_);
+console.log(fn._proto_);</code></li>
+<li>所有的函数都有一个prototype（显式原型）属性，是一个普通对象；<br><code>console.log(fn.prototype)</code></li>
+<li>并且所有对象的隐式原型指向构造函数的显式原型<code>obj._proto_ === Object.prototype</code></li>
+<li>试图得到一个对象的属性时，如果这个对象没有这个属性，就到他的<em>proto</em>（构造函数的显式原型）中寻找；</li>
+<li>for in循环可以遍历对象的所有的可枚举属性，包括自身的和从构造函数原型继承的属性，有时候只想得到对象自身的属性而不是继承的属性，需要写如下代码：<code>var item;
+for (item in f) {
+if(f.hasOwnProperty(item)){
+console.log(item)
+}
+}</code></li>
+<li>`//构造函数<br>function Foo(name, age){<pre><code>this.name = name
+</code></pre>};<br>Foo.prototype.alertName=function(){<br>alert(this.name)<br>}<br>//创建实例<br>var f=new Foo(‘Zhangsam’);<br>f.printName=function(){<br>console.log(this.name)}<br>//测试<br>f.printName();<br>f.alertName();<br>f.toString();`<br>在上面这三种情况下，究竟分别是怎样找到对应的属性呢，这里面就涉及到JavaScript中的属性查找规则，正如我们第九条中所言，对于printName而言，首先在f自身中寻找printName属性，发现有这个属性，那么就停止查找了；然后对于alertName，情况就有意思一点了，因为f自身是没有alertName这个属性的，那么此时就需要到f的隐式原型也就是<em>proto</em>对象中查找这个属性，也就是在构造函数Foo的显式原型中寻找这个属性，发现我们刚好在上面有所定义，那么就结束查找；对于第三种情况来说，情况就更有意思的多，我们在构造函数的原型对象中也没有发现toString方法，就需要继续沿着原型链向上查找，此时就需要找到Foo的构造函数的显示原型对象，而对象的构造函数就是Object，所以我们就找到了Object的原型对象上定义的toString方法；JavaScript为了避免死循环，规定Object.<em>proto</em>也就是他的隐式原型为null对象，查找到这里就终止不在向上查找。<br>12.instanceof是用于判断引用类型属于哪个构造函数的方法。比如上述代码，f是Foo的一个实例，判断方法是f的<em>proto</em>属性，一层一层向上，能否对应到Foo的显式原型对象。<br>f instanceof Object也是正确的，需要向上追溯两层。</li>
+</ol>
+<hr>
+<h3 id="如何准确判断一个变量是数组类型"><a href="#如何准确判断一个变量是数组类型" class="headerlink" title="如何准确判断一个变量是数组类型"></a>如何准确判断一个变量是数组类型</h3><p>利用instanceof Array<br><code>var arr=[];
+    arr instanceof Array //true
+    typeof arr //Object
+    typeof无法判断段是否是数组</code></p>
+<hr>
+<h3 id="写一个原型链继承的例子"><a href="#写一个原型链继承的例子" class="headerlink" title="写一个原型链继承的例子"></a>写一个原型链继承的例子</h3><p><code>function Animal(){
+    this.eat = function(){
+        console.log(&#39;animal eat&#39;)}
+    }
+    //狗
+    function Dog(){
+    this.bark = function(){
+    console.log(&#39;dog bark&#39;)}
+    }
+    Dog.prototype=new Animal();
+    //哈士奇
+    var hashiqi = new Dog();</code><br>    下面是一个封装DOM查询的例子：<br>    <code>function Elem(id){
+    this.elem = document.getElementById(id)
+    }
+    Elem.prototype.html = function(val){
+    var elem = this.elem;
+    if(val){
+    elem.innerHTML=val
+    return this; // 链式操作
+    }
+    else {
+    return elem.innerHTML}
+    }
+    Elem.prototype.on = function(type, fn){
+    var elem = this.elem;
+    elem.addEventListener(type, fn)}
+    var div1 = new Elem(&#39;div1&#39;)
+    console.log(div1.html())
+    div1.html(&#39;&lt;p&gt;hello world&lt;/p&gt;&#39;);
+    div1.on(&#39;click&#39;, function(){
+    alert(&#39;clicked&#39;)})</code></p>
+<hr>
+<h3 id="描述new一个对象的过程"><a href="#描述new一个对象的过程" class="headerlink" title="描述new一个对象的过程"></a>描述new一个对象的过程</h3><ol>
+<li>创建一个新对象</li>
+<li>this指向这个新对象</li>
+<li>执行代码，即对this赋值</li>
+<li>返回this</li>
+</ol>
+<hr>
+<h3 id="zepto源码中如何使用原型链"><a href="#zepto源码中如何使用原型链" class="headerlink" title="zepto源码中如何使用原型链"></a>zepto源码中如何使用原型链</h3><hr>
+<p>2017 年 12月 31日</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>原创技术分享,爱您哟</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="马国航 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="马国航 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/30/变量类型与计算/" rel="next" title="变量类型和计算">
+                <i class="fa fa-chevron-left"></i> 变量类型和计算
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjc1NC85MzE1"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="马国航" />
+            
+              <p class="site-author-name" itemprop="name">马国航</p>
+              <p class="site-description motion-element" itemprop="description">用代码书写人生，用音乐诠释生活</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/cravinglove" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:guohangma@gmail.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://weibo.com/3315582295/profile?topnav=1&wvr=6&is_all=1" target="_blank" title="微博">
+                    
+                      <i class="fa fa-fw fa-globe"></i>微博</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一往无前，不忘初心"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x4E00;&#x5F80;&#x65E0;&#x524D;&#xFF0C;&#x4E0D;&#x5FD8;&#x521D;&#x5FC3;" class="headerlink" title="&#x4E00;&#x5F80;&#x65E0;&#x524D;&#xFF0C;&#x4E0D;&#x5FD8;&#x521D;&#x5FC3;"></a>&#x4E00;&#x5F80;&#x65E0;&#x524D;&#xFF0C;&#x4E0D;&#x5FD8;&#x521D;&#x5FC3;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何准确判断一个变量是数组类型"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#&#x5982;&#x4F55;&#x51C6;&#x786E;&#x5224;&#x65AD;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x662F;&#x6570;&#x7EC4;&#x7C7B;&#x578B;" class="headerlink" title="&#x5982;&#x4F55;&#x51C6;&#x786E;&#x5224;&#x65AD;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x662F;&#x6570;&#x7EC4;&#x7C7B;&#x578B;"></a>&#x5982;&#x4F55;&#x51C6;&#x786E;&#x5224;&#x65AD;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x662F;&#x6570;&#x7EC4;&#x7C7B;&#x578B;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写一个原型链继承的例子"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#&#x5199;&#x4E00;&#x4E2A;&#x539F;&#x578B;&#x94FE;&#x7EE7;&#x627F;&#x7684;&#x4F8B;&#x5B50;" class="headerlink" title="&#x5199;&#x4E00;&#x4E2A;&#x539F;&#x578B;&#x94FE;&#x7EE7;&#x627F;&#x7684;&#x4F8B;&#x5B50;"></a>&#x5199;&#x4E00;&#x4E2A;&#x539F;&#x578B;&#x94FE;&#x7EE7;&#x627F;&#x7684;&#x4F8B;&#x5B50;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#描述new一个对象的过程"><span class="nav-number">1.3.</span> <span class="nav-text"><a href="#&#x63CF;&#x8FF0;new&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x8FC7;&#x7A0B;" class="headerlink" title="&#x63CF;&#x8FF0;new&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x8FC7;&#x7A0B;"></a>&#x63CF;&#x8FF0;new&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x8FC7;&#x7A0B;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zepto源码中如何使用原型链"><span class="nav-number">1.4.</span> <span class="nav-text"><a href="#zepto&#x6E90;&#x7801;&#x4E2D;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x539F;&#x578B;&#x94FE;" class="headerlink" title="zepto&#x6E90;&#x7801;&#x4E2D;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x539F;&#x578B;&#x94FE;"></a>zepto&#x6E90;&#x7801;&#x4E2D;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x539F;&#x578B;&#x94FE;</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">马国航</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("E7c1GBJunsBo04LGNRA1Fzk0-gzGzoHsz", "aPr4FXuLhzMi1mbeDokSTeuv");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
