@@ -365,51 +365,28 @@
 
       
         
-          
-            <h2 id="一往无前，不忘初心"><a href="#一往无前，不忘初心" class="headerlink" title="一往无前，不忘初心"></a>一往无前，不忘初心</h2><hr>
+          <h2 id="一往无前，不忘初心"><a href="#一往无前，不忘初心" class="headerlink" title="一往无前，不忘初心"></a>一往无前，不忘初心</h2><hr>
 <p>谨以本系列文章记录我的js学习之路!</p>
-<p>构造函数大写字母开头，通过构造函数可以创建多个对象，<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name=name</span><br><span class="line">  <span class="keyword">this</span>.age  = age</span><br><span class="line">  <span class="keyword">this</span>.class = <span class="string">'class-1'</span></span><br><span class="line">  <span class="comment">// return this默认返回this实例对象</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> f  = <span class="keyword">new</span> Foo(<span class="string">'zhnagsan'</span>, <span class="number">20</span>)</span><br><span class="line"><span class="string">``</span><span class="string">`&lt;!-- more --&gt;</span></span><br><span class="line"><span class="string">1. var a = &#123;&#125;是var a = new Object()的语法糖</span></span><br><span class="line"><span class="string">2. var a = []是var a = new Array()的语法糖</span></span><br><span class="line"><span class="string">3. function Foo()&#123;&#125;是var Foo = new Function(..)</span></span><br><span class="line"><span class="string">4. 使用instanceof判断一个函数是否是一个变量的构造函数</span></span><br><span class="line"><span class="string">5. 所有引用类型，包括数组对象函数都可以自由扩展属性（除了null对象）</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript</span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;obj.a = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">var</span> arr = [];arr.a = <span class="number">100</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">fn.a = <span class="number">100</span>;</span><br></pre></td></tr></table></figure></p>
+<p>构造函数大写字母开头，通过构造函数可以创建多个对象，<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name=name</span><br><span class="line">  <span class="keyword">this</span>.age  = age</span><br><span class="line">  <span class="keyword">this</span>.class = <span class="string">'class-1'</span></span><br><span class="line">  <span class="comment">// return this默认返回this实例对象</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> f  = <span class="keyword">new</span> Foo(<span class="string">'zhnagsan'</span>, <span class="number">20</span>)</span><br></pre></td></tr></table></figure></p>
 <ol>
+<li>var a = {}是var a = new Object()的语法糖</li>
+<li>var a = []是var a = new Array()的语法糖</li>
+<li>function Foo(){}是var Foo = new Function(..)</li>
+<li>使用instanceof判断一个函数是否是一个变量的构造函数</li>
+<li><p>所有引用类型，包括数组对象函数都可以自由扩展属性（除了null对象）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;obj.a = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">var</span> arr = [];arr.a = <span class="number">100</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">fn.a = <span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>都有一个<em>proto</em>（隐式原型）属性，为一个普通对象</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(obj._proto_);</span><br><span class="line"><span class="built_in">console</span>.log(arr._proto_);</span><br><span class="line"><span class="built_in">console</span>.log(fn._proto_);</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>所有的函数都有一个prototype（显式原型）属性，是一个普通对象；</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(fn.prototype)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>并且所有对象的隐式原型指向构造函数的显式原型</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obj._proto_ === <span class="built_in">Object</span>.prototype</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>试图得到一个对象的属性时，如果这个对象没有这个属性，就到他的<em>proto</em>（构造函数的显式原型）中寻找；</p>
-</li>
-<li><p>for in循环可以遍历对象的所有的可枚举属性，包括自身的和从构造函数原型继承的属性，有时候只想得到对象自身的属性而不是继承的属性，需要写如下代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> item;</span><br><span class="line"><span class="keyword">for</span> (item <span class="keyword">in</span> f) &#123;</span><br><span class="line"><span class="keyword">if</span>(f.hasOwnProperty(item))&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(item);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>对于如下这段代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name</span><br><span class="line">&#125;;</span><br><span class="line">Foo.prototype.alertName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  alert(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//创建实例</span></span><br><span class="line"><span class="keyword">var</span> f=<span class="keyword">new</span> Foo(<span class="string">'Zhangsam'</span>);</span><br><span class="line">f.printName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//测试</span></span><br><span class="line">f.printName();</span><br><span class="line">f.alertName();</span><br><span class="line">f.toString();</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>在上面这三种情况下，究竟分别是怎样找到对应的属性呢，这里面涉及到JavaScript中的属性查找规则，正如我们第九条中所言，对于printName而言，首先在f自身中寻找printName属性，发现有这个属性，那么就停止查找了；</p>
-<p>然后对于alertName，情况就有意思一点了，因为f自身是没有alertName这个属性的，那么此时就需要到f的隐式原型也就是<em>proto</em>对象中查找这个属性，也就是在构造函数Foo的显式原型中寻找这个属性，发现我们刚好在上面有所定义，那么就结束查找；</p>
-<p>对于第三种情况来说，情况就更有意思的多，我们在构造函数的原型对象中也没有发现toString方法，就需要继续沿着原型链向上查找，此时就需要找到Foo的构造函数的显示原型对象，而对象的构造函数就是Object，所以我们就找到了Object的原型对象上定义的toString方法；</p>
-<p>而JavaScript为了避免死循环，规定Object.<em>proto</em>也就是他的隐式原型为null对象，查找到这里就终止不在向上查找。<br>12.instanceof是用于判断引用类型属于哪个构造函数的方法。比如上述代码，f是Foo的一个实例，判断方法是f的<em>proto</em>属性，一层一层向上，能否对应到Foo的显式原型对象。<br>f instanceof Object也是正确的，需要向上追溯两层。</p>
-<hr>
-<h3 id="如何准确判断一个变量是数组类型"><a href="#如何准确判断一个变量是数组类型" class="headerlink" title="如何准确判断一个变量是数组类型"></a>如何准确判断一个变量是数组类型</h3><p>利用instanceof Array<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr=[];</span><br><span class="line">arr <span class="keyword">instanceof</span> <span class="built_in">Array</span> <span class="comment">//true</span></span><br><span class="line"><span class="keyword">typeof</span> arr <span class="comment">//Object</span></span><br></pre></td></tr></table></figure></p>
-<p>而typeof无法判断段是否是数组</p>
-<hr>
-<h3 id="写一个原型链继承的例子"><a href="#写一个原型链继承的例子" class="headerlink" title="写一个原型链继承的例子"></a>写一个原型链继承的例子</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="keyword">this</span>.eat = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'animal eat'</span>)&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//狗</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Dog</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.bark = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'dog bark'</span>)&#125;</span><br><span class="line">&#125;</span><br><span class="line">Dog.prototype=<span class="keyword">new</span> Animal();</span><br><span class="line"><span class="comment">//哈士奇</span></span><br><span class="line"><span class="keyword">var</span> hashiqi = <span class="keyword">new</span> Dog();</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="描述new一个对象的过程"><a href="#描述new一个对象的过程" class="headerlink" title="描述new一个对象的过程"></a>描述new一个对象的过程</h3><ol>
-<li>创建一个新对象</li>
-<li>this指向这个新对象</li>
-<li>执行代码，即对this赋值</li>
-<li>返回this</li>
-</ol>
-<hr>
-<h3 id="zepto源码中如何使用原型链"><a href="#zepto源码中如何使用原型链" class="headerlink" title="zepto源码中如何使用原型链"></a>zepto源码中如何使用原型链</h3><p>下面是一个封装DOM查询的例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Elem</span>(<span class="params">id</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.elem = <span class="built_in">document</span>.getElementById(id)</span><br><span class="line">&#125;</span><br><span class="line">Elem.prototype.html = <span class="function"><span class="keyword">function</span>(<span class="params">val</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> elem = <span class="keyword">this</span>.elem;</span><br><span class="line">  <span class="keyword">if</span>(val)&#123;</span><br><span class="line">  elem.innerHTML=val</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>; <span class="comment">// 链式操作</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> elem.innerHTML&#125;</span><br><span class="line">&#125;</span><br><span class="line">Elem.prototype.on = <span class="function"><span class="keyword">function</span>(<span class="params">type, fn</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> elem = <span class="keyword">this</span>.elem;</span><br><span class="line">  elem.addEventListener(type, fn);</span><br><span class="line">&#125;</span><br><span class="line">  <span class="keyword">var</span> div1 = <span class="keyword">new</span> Elem(<span class="string">'div1'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(div1.html());</span><br><span class="line">  div1.html(<span class="string">'&lt;p&gt;hello world&lt;/p&gt;'</span>);</span><br><span class="line">  div1.on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  alert(<span class="string">'clicked'</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<hr>
-<p>2017 年 12月 31日</p>
-
-          
+<li><p>所有的函数都有一个prototype（显式原型）属性，是一个普通对象；
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/31/原型和原型链/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -618,6 +595,165 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/30/可视化模型概述/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="马国航">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Macon's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/30/可视化模型概述/" itemprop="url">变量类型和计算</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-30T20:46:25+08:00">
+                2017-12-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/12/30/可视化模型概述/" class="leancloud_visitors" data-flag-title="变量类型和计算">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="一往无前，不忘初心"><a href="#一往无前，不忘初心" class="headerlink" title="一往无前，不忘初心"></a>一往无前，不忘初心</h2><hr>
+<p>作为css系列文章的第一篇，本文主要是通过阅读”css mastry”第三版整理而成，还希望大家指正。</p>
+<p>在本篇文章中，我们着重学习理解CSS盒模型，外边距是如何以及为什么会发生合并的，不同的定位属性和值，浮动和清除浮动是如何工作的以及格式化上下文到底是个什么东西这五个问题。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/30/可视化模型概述/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/28/17年终总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -763,6 +899,494 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/06/异步和单线程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="马国航">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Macon's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/01/06/异步和单线程/" itemprop="url">异步和单线程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-06T20:46:25+08:00">
+                2017-01-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/01/06/异步和单线程/" class="leancloud_visitors" data-flag-title="异步和单线程">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="一往无前，不忘初心"><a href="#一往无前，不忘初心" class="headerlink" title="一往无前，不忘初心"></a>一往无前，不忘初心</h2><hr>
+<p>谨以本系列文章记录我的js学习之路!</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/01/06/异步和单线程/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/05/作用域和闭包/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="马国航">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Macon's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/01/05/作用域和闭包/" itemprop="url">作用域和闭包</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-05T20:46:25+08:00">
+                2017-01-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/01/05/作用域和闭包/" class="leancloud_visitors" data-flag-title="作用域和闭包">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="一往无前，不忘初心"><a href="#一往无前，不忘初心" class="headerlink" title="一往无前，不忘初心"></a>一往无前，不忘初心</h2><hr>
+<p>谨以本系列文章记录我的JS学习之路!</p>
+<ul>
+<li>函数声明和函数表达式是什么，又有什么区别呢？</li>
+</ul>
+<p>我们来看如下的代码：<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">fn();</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//声明</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn1();</span><br><span class="line"><span class="keyword">var</span> fn1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//表达式</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>我们知道函数声明和变量都会进行提升，在函数声明之前调用函数不会报错，因为编译器已经知道这个是一个函数了，可以调用。</p>
+<p>但是对于函数表达式来说，将函数表达式赋值给变量的时候，变量是得到提升了，但是赋值操作是在执行过程中进行的，所以这里在表达式执行之前，fn1变量其实是undefined的。调用就会报错。</p>
+<ul>
+<li>我们再来看一个例子：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如果你觉得输出的结果是undefined，那么恭喜你已经对提升有了较好的理解了。</p>
+<p>a作为一个全局变量得到了提升，在a未赋值之前，a都被认为是undefined。</p>
+<p>函数在执行之前就已经确定了this和arguments的值</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/01/05/作用域和闭包/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/04/了解web和网络基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="马国航">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Macon's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/01/04/了解web和网络基础/" itemprop="url">了解web和网络基础</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-04T20:46:25+08:00">
+                2017-01-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HTTP/" itemprop="url" rel="index">
+                    <span itemprop="name">HTTP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/01/04/了解web和网络基础/" class="leancloud_visitors" data-flag-title="了解web和网络基础">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="一往无前，不忘初心"><a href="#一往无前，不忘初心" class="headerlink" title="一往无前，不忘初心"></a>一往无前，不忘初心</h2><hr>
+<p>谨以本系列文章记录我的HTTP学习之路!</p>
+<p>概述建立WEB的技术，以及HTTP的产生和发展。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/01/04/了解web和网络基础/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -813,7 +1437,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -824,7 +1448,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -835,7 +1459,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

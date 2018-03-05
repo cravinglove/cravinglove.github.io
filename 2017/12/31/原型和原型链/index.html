@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="一往无前，不忘初心 谨以本系列文章记录我的js学习之路! 构造函数大写字母开头，通过构造函数可以创建多个对象，123456789101112131415161718function Foo(name, age)&amp;#123;  this.name=name  this.age  = age  this.class = &apos;class-1&apos;  // return this默认返回this实例对象&amp;#12">
+<meta name="description" content="一往无前，不忘初心 谨以本系列文章记录我的js学习之路! 构造函数大写字母开头，通过构造函数可以创建多个对象，1234567function Foo(name, age)&amp;#123;  this.name=name  this.age  = age  this.class = &apos;class-1&apos;  // return this默认返回this实例对象&amp;#125;var f  = new Foo(&apos;">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="原型和原型链">
 <meta property="og:url" content="http://yoursite.com/2017/12/31/原型和原型链/index.html">
 <meta property="og:site_name" content="Macon&#39;s Blog">
-<meta property="og:description" content="一往无前，不忘初心 谨以本系列文章记录我的js学习之路! 构造函数大写字母开头，通过构造函数可以创建多个对象，123456789101112131415161718function Foo(name, age)&amp;#123;  this.name=name  this.age  = age  this.class = &apos;class-1&apos;  // return this默认返回this实例对象&amp;#12">
+<meta property="og:description" content="一往无前，不忘初心 谨以本系列文章记录我的js学习之路! 构造函数大写字母开头，通过构造函数可以创建多个对象，1234567function Foo(name, age)&amp;#123;  this.name=name  this.age  = age  this.class = &apos;class-1&apos;  // return this默认返回this实例对象&amp;#125;var f  = new Foo(&apos;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-04T13:08:54.251Z">
+<meta property="og:updated_time" content="2018-03-04T13:12:31.258Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型和原型链">
-<meta name="twitter:description" content="一往无前，不忘初心 谨以本系列文章记录我的js学习之路! 构造函数大写字母开头，通过构造函数可以创建多个对象，123456789101112131415161718function Foo(name, age)&amp;#123;  this.name=name  this.age  = age  this.class = &apos;class-1&apos;  // return this默认返回this实例对象&amp;#12">
+<meta name="twitter:description" content="一往无前，不忘初心 谨以本系列文章记录我的js学习之路! 构造函数大写字母开头，通过构造函数可以创建多个对象，1234567function Foo(name, age)&amp;#123;  this.name=name  this.age  = age  this.class = &apos;class-1&apos;  // return this默认返回this实例对象&amp;#125;var f  = new Foo(&apos;">
 
 
 
@@ -365,12 +365,19 @@
       
         <h2 id="一往无前，不忘初心"><a href="#一往无前，不忘初心" class="headerlink" title="一往无前，不忘初心"></a>一往无前，不忘初心</h2><hr>
 <p>谨以本系列文章记录我的js学习之路!</p>
-<p>构造函数大写字母开头，通过构造函数可以创建多个对象，<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name=name</span><br><span class="line">  <span class="keyword">this</span>.age  = age</span><br><span class="line">  <span class="keyword">this</span>.class = <span class="string">'class-1'</span></span><br><span class="line">  <span class="comment">// return this默认返回this实例对象</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> f  = <span class="keyword">new</span> Foo(<span class="string">'zhnagsan'</span>, <span class="number">20</span>)</span><br><span class="line"><span class="string">``</span><span class="string">`&lt;!-- more --&gt;</span></span><br><span class="line"><span class="string">1. var a = &#123;&#125;是var a = new Object()的语法糖</span></span><br><span class="line"><span class="string">2. var a = []是var a = new Array()的语法糖</span></span><br><span class="line"><span class="string">3. function Foo()&#123;&#125;是var Foo = new Function(..)</span></span><br><span class="line"><span class="string">4. 使用instanceof判断一个函数是否是一个变量的构造函数</span></span><br><span class="line"><span class="string">5. 所有引用类型，包括数组对象函数都可以自由扩展属性（除了null对象）</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript</span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;obj.a = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">var</span> arr = [];arr.a = <span class="number">100</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">fn.a = <span class="number">100</span>;</span><br></pre></td></tr></table></figure></p>
+<p>构造函数大写字母开头，通过构造函数可以创建多个对象，<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name=name</span><br><span class="line">  <span class="keyword">this</span>.age  = age</span><br><span class="line">  <span class="keyword">this</span>.class = <span class="string">'class-1'</span></span><br><span class="line">  <span class="comment">// return this默认返回this实例对象</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> f  = <span class="keyword">new</span> Foo(<span class="string">'zhnagsan'</span>, <span class="number">20</span>)</span><br></pre></td></tr></table></figure></p>
 <ol>
+<li>var a = {}是var a = new Object()的语法糖</li>
+<li>var a = []是var a = new Array()的语法糖</li>
+<li>function Foo(){}是var Foo = new Function(..)</li>
+<li>使用instanceof判断一个函数是否是一个变量的构造函数</li>
+<li><p>所有引用类型，包括数组对象函数都可以自由扩展属性（除了null对象）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;obj.a = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">var</span> arr = [];arr.a = <span class="number">100</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">fn.a = <span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>都有一个<em>proto</em>（隐式原型）属性，为一个普通对象</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(obj._proto_);</span><br><span class="line"><span class="built_in">console</span>.log(arr._proto_);</span><br><span class="line"><span class="built_in">console</span>.log(fn._proto_);</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>所有的函数都有一个prototype（显式原型）属性，是一个普通对象；</p>
+<li><p>所有的函数都有一个prototype（显式原型）属性，是一个普通对象；<a id="more"></a></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(fn.prototype)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>并且所有对象的隐式原型指向构造函数的显式原型</p>
@@ -558,7 +565,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -569,7 +576,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -580,7 +587,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
