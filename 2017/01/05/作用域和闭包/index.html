@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Macon&#39;s Blog">
 <meta property="og:description" content="一往无前，不忘初心 谨以本系列文章记录我的JS学习之路!  函数声明和函数表达式是什么，又有什么区别呢？  我们来看如下的代码： 123456789fn();function fn () &amp;#123;  //声明&amp;#125;fn1();var fn1 = function () &amp;#123;  //表达式&amp;#125; 我们知道函数声明和变量都会进行提升，在函数声明之前调用函数不会报错，因为编译器已">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-05T10:27:24.426Z">
+<meta property="og:updated_time" content="2018-03-05T12:43:11.441Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="作用域和闭包">
 <meta name="twitter:description" content="一往无前，不忘初心 谨以本系列文章记录我的JS学习之路!  函数声明和函数表达式是什么，又有什么区别呢？  我们来看如下的代码： 123456789fn();function fn () &amp;#123;  //声明&amp;#125;fn1();var fn1 = function () &amp;#123;  //表达式&amp;#125; 我们知道函数声明和变量都会进行提升，在函数声明之前调用函数不会报错，因为编译器已">
@@ -443,7 +443,7 @@
 <p>封装变量和收敛权限<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isFirstLoad</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> _list = [];</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">id</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (_list.indexOf(id) &gt;=<span class="number">0</span> ) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      _list.push(id);</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line"><span class="keyword">var</span> firstLoad = isFirstLoad();</span><br><span class="line">firstLoad(<span class="number">10</span>); <span class="comment">// true</span></span><br><span class="line">firstLoad(<span class="number">10</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure></p>
 <p>表现为_list不能随意被外部修改。</p>
 <hr>
-<p>2017 年 12月 30日</p>
+<p>2018 年 1月 5日</p>
 
       
     </div>
@@ -502,10 +502,6 @@
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/01/04/了解web和网络基础/" rel="next" title="了解web和网络基础">
-                <i class="fa fa-chevron-left"></i> 了解web和网络基础
-              </a>
             
           </div>
 
@@ -601,7 +597,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
