@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Macon&#39;s Blog">
 <meta property="og:description" content="一往无前，不忘初心 谨以本系列文章记录我的js学习之路! 变量类型分为值类型和引用类型。1234var a = 100;var b = a;a = 200;console.log(b);   //100 这就是值类型，变量之间不会相互影响，a位置存的就是一个数字，b位置野村的是相同的数字而已 1234var a = &amp;#123;age:20&amp;#125;;var b = a;b.age = 21;c">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-05T12:43:21.930Z">
+<meta property="og:updated_time" content="2018-03-06T02:06:07.656Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="变量类型和计算">
 <meta name="twitter:description" content="一往无前，不忘初心 谨以本系列文章记录我的js学习之路! 变量类型分为值类型和引用类型。1234var a = 100;var b = a;a = 200;console.log(b);   //100 这就是值类型，变量之间不会相互影响，a位置存的就是一个数字，b位置野村的是相同的数字而已 1234var a = &amp;#123;age:20&amp;#125;;var b = a;b.age = 21;c">
@@ -371,7 +371,7 @@
 <p>引用类型（包含数组，对象和函数）的变量之间会互相影响，a位置存的是一个指针指向该对象，实际上对象存在另外的地方，定义的b存放的指针也指向该对象，所以修改了对象的指针，为了让内存共用空间才出现了引用类型。</p>
 <a id="more"></a>
 <hr>
-<h3 id="JS使用typeof可以得到的类型"><a href="#JS使用typeof可以得到的类型" class="headerlink" title="JS使用typeof可以得到的类型"></a>JS使用typeof可以得到的类型</h3><p>typeof一共有五种形式，分别是undefined,object,string,boolean,symbol,function和number,注意typeof null也是object！只能区分值类型，不能区分除函数外的其他引用类型。</p>
+<h3 id="JS使用typeof可以得到的类型"><a href="#JS使用typeof可以得到的类型" class="headerlink" title="JS使用typeof可以得到的类型"></a>JS使用typeof可以得到的类型</h3><p>typeof一共有7种形式，分别是undefined,object,string,boolean,symbol,function和number,注意typeof null也是object！只能区分值类型，不能区分除函数外的其他引用类型。</p>
 <hr>
 <h3 id="值类型的强制类型转换"><a href="#值类型的强制类型转换" class="headerlink" title="值类型的强制类型转换"></a>值类型的强制类型转换</h3><ol>
 <li><p>字符串拼接</p>
