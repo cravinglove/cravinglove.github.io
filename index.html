@@ -1031,7 +1031,7 @@
 <li>var a = {}是var a = new Object()的语法糖</li>
 <li>var a = []是var a = new Array()的语法糖</li>
 <li>function Foo(){}是var Foo = new Function(..)</li>
-<li>instanceof是用于判断引用类型属于哪个构造函数的方法。比如上述代码，f是Foo的一个实例，判断方法是f的<em>proto</em>属性，一层一层向上，能否对应到Foo的显式原型对象。<br>f instanceof Object也是正确的，需要向上追溯两层。</li>
+<li>instanceof是用于判断引用类型属于哪个构造函数的方法。比如上述代码，f是Foo的一个实例，判断方法是f的<em>proto</em>属性，一层一层向上，能否对应到Foo的显式原型对象。f instanceof Object也是正确的，需要向上追溯两层。</li>
 <li><p>所有引用类型，包括数组对象函数都可以自由扩展属性（除了null对象）</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;obj.a = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">var</span> arr = [];arr.a = <span class="number">100</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">fn.a = <span class="number">100</span>;</span><br></pre></td></tr></table></figure>
 </li>
