@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="HTTP," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="一往无前，不忘初心 谨以本系列文章记录我的HTTP学习之路! 概述建立WEB的技术，以及HTTP的产生和发展。">
-<meta name="keywords" content="HTTP">
+<meta name="description" content="一往无前，不忘初心 谨以本系列文章记录我的js学习之路! 面向对象类包含  类和实例 类和继承">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="了解web和网络基础">
-<meta property="og:url" content="http://yoursite.com/2018/01/04/了解web和网络基础/index.html">
+<meta property="og:title" content="面向对象">
+<meta property="og:url" content="http://yoursite.com/2018/01/08/面向对象/index.html">
 <meta property="og:site_name" content="Macon&#39;s Blog">
-<meta property="og:description" content="一往无前，不忘初心 谨以本系列文章记录我的HTTP学习之路! 概述建立WEB的技术，以及HTTP的产生和发展。">
+<meta property="og:description" content="一往无前，不忘初心 谨以本系列文章记录我的js学习之路! 面向对象类包含  类和实例 类和继承">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-08T11:08:03.610Z">
+<meta property="og:updated_time" content="2018-03-08T13:40:04.283Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="了解web和网络基础">
-<meta name="twitter:description" content="一往无前，不忘初心 谨以本系列文章记录我的HTTP学习之路! 概述建立WEB的技术，以及HTTP的产生和发展。">
+<meta name="twitter:title" content="面向对象">
+<meta name="twitter:description" content="一往无前，不忘初心 谨以本系列文章记录我的js学习之路! 面向对象类包含  类和实例 类和继承">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/01/04/了解web和网络基础/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/08/面向对象/"/>
 
 
 
 
 
-  <title>了解web和网络基础 | Macon's Blog</title>
+  <title>面向对象 | Macon's Blog</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/04/了解web和网络基础/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/08/面向对象/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="马国航">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">了解web和网络基础</h1>
+          <h1 class="post-title" itemprop="name headline">面向对象</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-04T20:46:25+08:00">
-                2018-01-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-08T20:46:25+08:00">
+                2018-01-08
               </time>
             
 
@@ -315,8 +315,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTTP/" itemprop="url" rel="index">
-                    <span itemprop="name">HTTP</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -332,7 +332,7 @@
 
           
           
-             <span id="/2018/01/04/了解web和网络基础/" class="leancloud_visitors" data-flag-title="了解web和网络基础">
+             <span id="/2018/01/08/面向对象/" class="leancloud_visitors" data-flag-title="面向对象">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -364,89 +364,29 @@
 
       
         <h2 id="一往无前，不忘初心"><a href="#一往无前，不忘初心" class="headerlink" title="一往无前，不忘初心"></a>一往无前，不忘初心</h2><hr>
-<p>谨以本系列文章记录我的HTTP学习之路!</p>
-<p>概述建立WEB的技术，以及HTTP的产生和发展。</p>
+<p>谨以本系列文章记录我的js学习之路!</p>
+<p>面向对象类包含</p>
+<ul>
+<li>类和实例</li>
+<li>类和继承</li>
+</ul>
 <a id="more"></a>
 <hr>
-<h3 id="使用HTTP协议访问网络"><a href="#使用HTTP协议访问网络" class="headerlink" title="使用HTTP协议访问网络"></a>使用HTTP协议访问网络</h3><p>当在浏览器地址栏输入URL时候，就会显示对应的web网页了。这其实是当我们输入URL之后，请求的信息被送到对应的服务器，服务器返回的内容就呈现在我们的设备上了。通过发送请求获取服务器资源的浏览器都可被称为客户端（client）。</p>
-<p>web使用HTTP协议（HyperText Transfer Protocol超文本传输（转换）协议）作为规范，并且建立在HTTP协议上通信。</p>
+<h3 id="类的声明"><a href="#类的声明" class="headerlink" title="类的声明"></a>类的声明</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 类的声明</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = <span class="string">'name'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ES6中的class声明</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal2</span> () </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span> () &#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
-<h3 id="网络基础TCP-IP"><a href="#网络基础TCP-IP" class="headerlink" title="网络基础TCP/IP"></a>网络基础TCP/IP</h3><p>通常使用的网络建立在TCP/IP协议族的基础上面，HTTP属于其内部的一个子集。计算机之间要相互通信，肯定要基于相同的规则，如何探测目标，哪一边先发起通信，以及用什么语言沟通，如何结束通信这些都需要事先确定，我们将这种规则确定为协议。</p>
-<p>协议中包含电缆规格选取，寻找异地用户方法，双方建立通信顺序等，这些与互联网相关联的协议集合起来称之为TCP/IP。</p>
-<p>TCP/IP协议中一个很重要的方面就是分层，按层次分别分为以下四层：应用层，传输层，网络层和数据链路层。</p>
-<p>分层存在许多好处，比如那个地方需要改变设计，不需要将整体重新替换，而只需要将变动的层改变即可。各层之间定义好接口，内部的内容就可以自由改变了。</p>
-<p>协议层各层的作用如下：</p>
-<ol>
-<li><p>应用层</p>
-<p> 应用层决定了向用户提供应用服务时通信的活动；</p>
-<p> TCP/IP协议族内预存了各类通用的应用服务。比如FTP（File Transfer Protocol，文件传输协议）和DNS（Domain Name System，域名系统）服务就是其中两类。另外，HTTP协议也处于该层。</p>
-</li>
-<li><p>传输层</p>
-<p> 传输层对上层应用层，提供处于网络中的两台计算机之间的数据传输。</p>
-<p> 传输层存在两个性质不同的协议，分别是TCP（Transmission Control Protocol，传输控制协议）协议和UDP（User Data Protocol，用户传输报协议）协议。</p>
-</li>
-<li><p>网络层</p>
-<p> 网络层用来处理网络上流动的数据包。数据包是网络传输的最小数据单位。规定通过怎样的路径将数据传给对方。在众多线路中选择一条传输路线。</p>
-</li>
-<li><p>数据链路层</p>
-<p> 处理连接网络的硬件部分。包括控制操作系统，硬件设备驱动，网络适配器和光纤等物理可见部分。硬件上的范畴均在链路层的作用范围内。</p>
-</li>
-</ol>
-<h3 id="HTTP协议的主要特点"><a href="#HTTP协议的主要特点" class="headerlink" title="HTTP协议的主要特点"></a>HTTP协议的主要特点</h3><p>简单快速：URI固定<br>灵活：头部数据类型，完成不同数据类型的传输<br>无连接：连接一次就断开<br>无状态：不能区分两次连接者的状态</p>
+<h3 id="通过类实例化对象"><a href="#通过类实例化对象" class="headerlink" title="通过类实例化对象"></a>通过类实例化对象</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//打印上方实例化后的两个对象</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> Animal(), <span class="keyword">new</span> Animal2())</span><br></pre></td></tr></table></figure>
 <hr>
-<h3 id="HTTP报文"><a href="#HTTP报文" class="headerlink" title="HTTP报文"></a>HTTP报文</h3><p>请求报文包括请求行，请求头，空行和请求体<br>响应报文包括状态行，响应头，空行和响应体</p>
-<p>请求行包含HTTP方法，请求页面地址，HTTP协议版本<br>请求头告诉服务端需要哪些内容，为一些key、value值<br>空行告诉服务端下面是请求体，用来分隔请求头和请求体。</p>
-<p>HTTP方法：GET POST PUT DELETE HEAD</p>
+<h3 id="类的继承"><a href="#类的继承" class="headerlink" title="类的继承"></a>类的继承</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//借构造函数继承</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name=<span class="string">'parent1'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  Parent1.call(<span class="keyword">this</span>);<span class="comment">// apply,相当于在这里执行了Parent1构造函数的内容</span></span><br><span class="line">  <span class="keyword">this</span>.type=<span class="string">'child1'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>构造函数的继承不会继承父类原型对象上的方法，存在一定的缺陷。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 借助原型链实现继承</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = <span class="string">'parent2'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.type=<span class="string">'child2'</span>;</span><br><span class="line">&#125;</span><br><span class="line">Child2.prototype = <span class="keyword">new</span> Parent2();</span><br></pre></td></tr></table></figure>
+<p>Child2的实例都共享一个原型对象就是Parent2的这个实例，是这种继承的缺点</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 组合方式</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent3</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = <span class="string">'parent3'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child3</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  Parent3.call(<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">this</span>.type = <span class="string">'child3'</span>;</span><br><span class="line">&#125;</span><br><span class="line">Child3.prototype = <span class="keyword">new</span> Parent3();</span><br></pre></td></tr></table></figure>
+<p>构造函数执行两次，没必要。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 组合方式优化1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent4</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = <span class="string">'parent4'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child4</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  Parent3.call(<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">this</span>.type = <span class="string">'child4'</span>;</span><br><span class="line">&#125;</span><br><span class="line">Child4.prototype = Parent4.prototype;</span><br></pre></td></tr></table></figure>
+<p>无法判断实例直接继承于谁，实例的constructor属性指向存在问题</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 组合方式优化2</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent5</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = <span class="string">'parent5'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child5</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  Parent3.call(<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">this</span>.type = <span class="string">'child5'</span>;</span><br><span class="line">&#125;</span><br><span class="line">Child5.prototype = <span class="built_in">Object</span>.create(Parent5.prototype);</span><br><span class="line">Child5.prototype.constructor = Child5;</span><br></pre></td></tr></table></figure>
 <hr>
-<h3 id="post和get区别"><a href="#post和get区别" class="headerlink" title="post和get区别"></a>post和get区别</h3><p><strong>GET浏览器回退无害，POST再次提交请求</strong></p>
-<p>GET产生的URL可以被收藏，POST不可以</p>
-<p><strong>GET请求会被浏览器主动缓存，POST不会</strong></p>
-<p>GET只能进行url编码，POST支持多种编码方式</p>
-<p><strong>GET请求参数保存在浏览器历史记录，POST不会保留参数</strong></p>
-<p><strong>GET请求在url传送的参数长度有限制，POST没有限制<br>对参数的数据类型</strong></p>
-<p>GET只接受ASCII字符，POST没有限制</p>
-<p>GET比POST更不安全，因为参数直接暴露在URL上，不能传递敏感信息</p>
-<p><strong>GET参数通过URL传递，POST放在request body中</strong></p>
-<hr>
-<h3 id="HTTP状态码"><a href="#HTTP状态码" class="headerlink" title="HTTP状态码"></a>HTTP状态码</h3><ul>
-<li><p>1xx：指示信息-表示请求已接收，继续处理</p>
-</li>
-<li><p>2xx：成功-表示请求已被成功接收</p>
-<p>  200 OK客户端请求成功</p>
-<p>  206 客户端发送了一个带有range头的GET请求，服务器完成了它。</p>
-</li>
-<li><p>3xx：重定向-要完成请求需要进行更进一步的操作</p>
-<p>  301Moved Permanently：锁清秋的页面已经转移到新的url。</p>
-<p>  302 Found：请求的页面已经临时转移至新的url。</p>
-<p>  304 Not Modified：客户端有缓冲的文档并发出了一个条件性的请求，服务器告诉客户，原来缓冲的文档还可以继续使用</p>
-</li>
-<li><p>4xx：客户端错误-请求有语法错误或者请求无法实现</p>
-<p>  400 Bad Request：客户端请求有语法错误，不能被服务器所理解。</p>
-<p>  401 Unauthorized：请求未经授权，这个状态码必须和WWW-Authenticate报头域一起使用。</p>
-<p>  403Forbidden：对被请求的页面的访问被禁止。</p>
-<p>  404请求资源不存在</p>
-</li>
-</ul>
-<ul>
-<li><p>5xx：服务器错误，服务器不能实现合法的请求</p>
-<p>  500 Internal Server Error：服务器发生不可预期的错误，原来缓冲的文档还可以继续使用。</p>
-<p>  503 Server Unavailable：请求未完成，服务器临时过载或者当机，一段时间后可能恢复正常。</p>
-</li>
-</ul>
-<h3 id="HTTP持久连接（只支持1-1版本）"><a href="#HTTP持久连接（只支持1-1版本）" class="headerlink" title="HTTP持久连接（只支持1.1版本）"></a>HTTP持久连接（只支持1.1版本）</h3><p>HTTP协议采用请求-应答模式，当使用普通模式，非Keep-Alive模式时，每个请求/应答客户和服务器都要新建一个连接，完成之后断开连接（为无连接的协议）</p>
-<p>当使用Keep-Alive模式时，Keep-Alive功能使得客户端到服务端的连接持续有效，当出现对服务器的后续请求时，Keep-Alive功能避免了重新建立连接。</p>
-<h3 id="管线化"><a href="#管线化" class="headerlink" title="管线化"></a>管线化</h3><p>使用持久连接的情况下，某个连接上的消息类似于请求1 -&gt; 响应1 -&gt; 请求2 -&gt; 响应2 -&gt; 请求3 -&gt; 响应3</p>
-<p>管线化就是将请求打包一次传过去，响应页打包一次传回来。</p>
-<p>请求1 -&gt; 请求2 -&gt; 请求3 -&gt; 响应1 -&gt; 响应2 -&gt; 响应3</p>
-<pre><code>管线化的特点
-- 管线化机制通过持久连接完成，只有HTTP/1.1支持此技术
-- 只有GET和HEAD请求可以进行管线化，而POST有所限制
-- 初次创建连接时候不应启动管线机制，因为服务器不一定支持HTTP/1.1的协议。
-- 管线化不会影响响应到来的顺序，如上面的例子，响应返回的顺序还是不变的
-- HTTP/1.1要求服务器端支持管线化，但并不要求服务器端也对响应进行管线化处理，只是要求对于管线化的请求不失败即可。
-- 由于上面提到的服务器端问题，开启管线化可能不会带来大幅度性能提升，而且很多服务端和代理程序对管线化的支持并不好，因此现代浏览器默认并未开启管线化支持。
-</code></pre><hr>
-<p>2018 年 1月 4日</p>
+<p>2018 年 1月 8日</p>
 
       
     </div>
@@ -493,7 +433,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/HTTP/" rel="tag"># HTTP</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
       
@@ -506,8 +446,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/31/原型和原型链/" rel="next" title="原型和原型链">
-                <i class="fa fa-chevron-left"></i> 原型和原型链
+              <a href="/2018/01/07/一些面试题/" rel="next" title="一些面试题">
+                <i class="fa fa-chevron-left"></i> 一些面试题
               </a>
             
           </div>
@@ -516,8 +456,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/05/作用域和闭包/" rel="prev" title="作用域和闭包">
-                作用域和闭包 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/01/09/通信相关/" rel="prev" title="通信相关">
+                通信相关 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -681,7 +621,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一往无前，不忘初心"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x4E00;&#x5F80;&#x65E0;&#x524D;&#xFF0C;&#x4E0D;&#x5FD8;&#x521D;&#x5FC3;" class="headerlink" title="&#x4E00;&#x5F80;&#x65E0;&#x524D;&#xFF0C;&#x4E0D;&#x5FD8;&#x521D;&#x5FC3;"></a>&#x4E00;&#x5F80;&#x65E0;&#x524D;&#xFF0C;&#x4E0D;&#x5FD8;&#x521D;&#x5FC3;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用HTTP协议访问网络"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#&#x4F7F;&#x7528;HTTP&#x534F;&#x8BAE;&#x8BBF;&#x95EE;&#x7F51;&#x7EDC;" class="headerlink" title="&#x4F7F;&#x7528;HTTP&#x534F;&#x8BAE;&#x8BBF;&#x95EE;&#x7F51;&#x7EDC;"></a>&#x4F7F;&#x7528;HTTP&#x534F;&#x8BAE;&#x8BBF;&#x95EE;&#x7F51;&#x7EDC;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络基础TCP-IP"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#&#x7F51;&#x7EDC;&#x57FA;&#x7840;TCP-IP" class="headerlink" title="&#x7F51;&#x7EDC;&#x57FA;&#x7840;TCP/IP"></a>&#x7F51;&#x7EDC;&#x57FA;&#x7840;TCP/IP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP协议的主要特点"><span class="nav-number">1.3.</span> <span class="nav-text"><a href="#HTTP&#x534F;&#x8BAE;&#x7684;&#x4E3B;&#x8981;&#x7279;&#x70B9;" class="headerlink" title="HTTP&#x534F;&#x8BAE;&#x7684;&#x4E3B;&#x8981;&#x7279;&#x70B9;"></a>HTTP&#x534F;&#x8BAE;&#x7684;&#x4E3B;&#x8981;&#x7279;&#x70B9;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP报文"><span class="nav-number">1.4.</span> <span class="nav-text"><a href="#HTTP&#x62A5;&#x6587;" class="headerlink" title="HTTP&#x62A5;&#x6587;"></a>HTTP&#x62A5;&#x6587;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#post和get区别"><span class="nav-number">1.5.</span> <span class="nav-text"><a href="#post&#x548C;get&#x533A;&#x522B;" class="headerlink" title="post&#x548C;get&#x533A;&#x522B;"></a>post&#x548C;get&#x533A;&#x522B;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP状态码"><span class="nav-number">1.6.</span> <span class="nav-text"><a href="#HTTP&#x72B6;&#x6001;&#x7801;" class="headerlink" title="HTTP&#x72B6;&#x6001;&#x7801;"></a>HTTP&#x72B6;&#x6001;&#x7801;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP持久连接（只支持1-1版本）"><span class="nav-number">1.7.</span> <span class="nav-text"><a href="#HTTP&#x6301;&#x4E45;&#x8FDE;&#x63A5;&#xFF08;&#x53EA;&#x652F;&#x6301;1-1&#x7248;&#x672C;&#xFF09;" class="headerlink" title="HTTP&#x6301;&#x4E45;&#x8FDE;&#x63A5;&#xFF08;&#x53EA;&#x652F;&#x6301;1.1&#x7248;&#x672C;&#xFF09;"></a>HTTP&#x6301;&#x4E45;&#x8FDE;&#x63A5;&#xFF08;&#x53EA;&#x652F;&#x6301;1.1&#x7248;&#x672C;&#xFF09;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#管线化"><span class="nav-number">1.8.</span> <span class="nav-text"><a href="#&#x7BA1;&#x7EBF;&#x5316;" class="headerlink" title="&#x7BA1;&#x7EBF;&#x5316;"></a>&#x7BA1;&#x7EBF;&#x5316;</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一往无前，不忘初心"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x4E00;&#x5F80;&#x65E0;&#x524D;&#xFF0C;&#x4E0D;&#x5FD8;&#x521D;&#x5FC3;" class="headerlink" title="&#x4E00;&#x5F80;&#x65E0;&#x524D;&#xFF0C;&#x4E0D;&#x5FD8;&#x521D;&#x5FC3;"></a>&#x4E00;&#x5F80;&#x65E0;&#x524D;&#xFF0C;&#x4E0D;&#x5FD8;&#x521D;&#x5FC3;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类的声明"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#&#x7C7B;&#x7684;&#x58F0;&#x660E;" class="headerlink" title="&#x7C7B;&#x7684;&#x58F0;&#x660E;"></a>&#x7C7B;&#x7684;&#x58F0;&#x660E;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过类实例化对象"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#&#x901A;&#x8FC7;&#x7C7B;&#x5B9E;&#x4F8B;&#x5316;&#x5BF9;&#x8C61;" class="headerlink" title="&#x901A;&#x8FC7;&#x7C7B;&#x5B9E;&#x4F8B;&#x5316;&#x5BF9;&#x8C61;"></a>&#x901A;&#x8FC7;&#x7C7B;&#x5B9E;&#x4F8B;&#x5316;&#x5BF9;&#x8C61;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类的继承"><span class="nav-number">1.3.</span> <span class="nav-text"><a href="#&#x7C7B;&#x7684;&#x7EE7;&#x627F;" class="headerlink" title="&#x7C7B;&#x7684;&#x7EE7;&#x627F;"></a>&#x7C7B;&#x7684;&#x7EE7;&#x627F;</span></a></li></ol></li></ol></div>
             
 
           </div>
