@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="计算机网络," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="网络层概念 虚电路：一条逻辑上的连接，分组都沿着这条逻辑连接按照存储转发的方式传送，而不是真正建立了一条物理连接。 IP（网际协议）:TCP/IP体系中两个最主要的协议之一，也是最重要的互联网标准之一，与ARP、ICMP、IGMP配套使用。 ARP：地址解析协议，用于从IP地址到MAC地址的转换 ICMP:网际控制报文协议，允许主机或路由器报告差错情况和有关异常情况的报告。 子网掩码:子网掩码用于">
+<meta name="keywords" content="计算机网络">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络网络层">
+<meta property="og:url" content="http://yoursite.com/2018/05/05/计算机网络网络层/index.html">
+<meta property="og:site_name" content="Macon&#39;s Blog">
+<meta property="og:description" content="网络层概念 虚电路：一条逻辑上的连接，分组都沿着这条逻辑连接按照存储转发的方式传送，而不是真正建立了一条物理连接。 IP（网际协议）:TCP/IP体系中两个最主要的协议之一，也是最重要的互联网标准之一，与ARP、ICMP、IGMP配套使用。 ARP：地址解析协议，用于从IP地址到MAC地址的转换 ICMP:网际控制报文协议，允许主机或路由器报告差错情况和有关异常情况的报告。 子网掩码:子网掩码用于">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://github.com/CyC2018/Interview-Notebook/blob/master/pics/85c05fb1-5546-4c50-9221-21f231cdc8c5.jpg">
+<meta property="og:updated_time" content="2018-05-22T01:24:50.646Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机网络网络层">
+<meta name="twitter:description" content="网络层概念 虚电路：一条逻辑上的连接，分组都沿着这条逻辑连接按照存储转发的方式传送，而不是真正建立了一条物理连接。 IP（网际协议）:TCP/IP体系中两个最主要的协议之一，也是最重要的互联网标准之一，与ARP、ICMP、IGMP配套使用。 ARP：地址解析协议，用于从IP地址到MAC地址的转换 ICMP:网际控制报文协议，允许主机或路由器报告差错情况和有关异常情况的报告。 子网掩码:子网掩码用于">
+<meta name="twitter:image" content="https://github.com/CyC2018/Interview-Notebook/blob/master/pics/85c05fb1-5546-4c50-9221-21f231cdc8c5.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/05/计算机网络网络层/"/>
+
+
+
+
+
+  <title>计算机网络网络层 | Macon's Blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?291962ff174733e0d36d0af926f2a36e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Macon's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/计算机网络网络层/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="马国航">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Macon's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">计算机网络网络层</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T00:46:25+08:00">
+                2018-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机网络/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/05/05/计算机网络网络层/" class="leancloud_visitors" data-flag-title="计算机网络网络层">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ol>
+<li>虚电路：一条逻辑上的连接，分组都沿着这条逻辑连接按照存储转发的方式传送，而不是真正建立了一条物理连接。</li>
+<li>IP（网际协议）:TCP/IP体系中两个最主要的协议之一，也是最重要的互联网标准之一，与ARP、ICMP、IGMP配套使用。</li>
+<li>ARP：地址解析协议，用于从IP地址到MAC地址的转换</li>
+<li>ICMP:网际控制报文协议，允许主机或路由器报告差错情况和有关异常情况的报告。</li>
+<li>子网掩码:子网掩码用于确定关于子网划分的信息，并标识IP地址中的网络部分和主机部分。</li>
+<li>CIDR:称为无分类域间路由选择，使用斜线记法标明前缀和主机号，网络前缀代替了网络号和子网号。</li>
+<li>默认路由：路由表中无法查找到目的地址的路由信息，路由器选择的路由。</li>
+<li>路由选择算法：</li>
+<li>自治系统AS:在单一技术管理下的一组路由器，使用统一的路由选择协议和共同的度量。对其他AS表现出单一和一致的路由选择策略。</li>
+<li>IGP（内部网关协议）：一个自治系统内部使用的路由选择协议，与其他自治系统使用什么路由选择协议无关，常用RIP和OSPF协议。</li>
+<li>EGP(外部网关协议):简言之就是自治系统之间使用的路由选择协议，比如常用的BGP的第四个版本BGP-4。</li>
+<li>RIP协议:是一种分布式的基于距离向量的路由选择协议，是互联网的标准协议，最大优点是简单。维护自己到其他每一个目的网络的距离记录，这是一组距离，即距离向量。</li>
+<li>OSPF（开放最短路径优先）协议：最主要的特征是使用分布式的链路状态协议，而不是像RIP一样的距离向量协议。</li>
+<li>BGP（边界网关协议）:在不同自治系统交换路由信息的协议。</li>
+<li>IPV6:下一代网际协议，IP协议的另一个版本。</li>
+</ol>
+<h2 id="问答"><a href="#问答" class="headerlink" title="问答"></a>问答</h2><h3 id="网络层的任务"><a href="#网络层的任务" class="headerlink" title="网络层的任务"></a>网络层的任务</h3><p>网络层向上只提供简单灵活的、无连接的、尽最大努力交付的数据报服务。</p>
+<h3 id="网络层有那两类服务？各有何优缺点？因特网采纳了何种服务"><a href="#网络层有那两类服务？各有何优缺点？因特网采纳了何种服务" class="headerlink" title="网络层有那两类服务？各有何优缺点？因特网采纳了何种服务"></a>网络层有那两类服务？各有何优缺点？因特网采纳了何种服务</h3><ul>
+<li>虚电路服务和数据报服务。</li>
+<li>虚电路服务优点是减少了分组的开销，若使用可靠传输的网络协议，就可以使得分组无差错按需到达终点；缺点是网络造价高并且不太灵活，所有数据都按相同的路由发送，中间某结点发生故障就导致整个线路中断，数据无法继续发送。</li>
+<li>数据报服务优点是造价大大降低，运行方式灵活，可适应多种应用；缺点是发送的分组可能出错丢失重复和失序等，不保证交付的时限。</li>
+<li>因特网采用数据报服务。</li>
+</ul>
+<h3 id="IP协议的用途，IP是否提供可靠的网络通讯。"><a href="#IP协议的用途，IP是否提供可靠的网络通讯。" class="headerlink" title="IP协议的用途，IP是否提供可靠的网络通讯。"></a>IP协议的用途，IP是否提供可靠的网络通讯。</h3><p>当互连在一起的计算机网络都是用相同的IP协议时，就可以使得性能各异的网络在网络层看起来好像是一个统一的网络。<br>不提供可靠的网络通讯，提供尽最大努力交付数据报服务。</p>
+<h3 id="IP地址的编址方法有那三类？"><a href="#IP地址的编址方法有那三类？" class="headerlink" title="IP地址的编址方法有那三类？"></a>IP地址的编址方法有那三类？</h3><p>三个历史阶段</p>
+<ol>
+<li>分类的IP地址：最基本的编址方法</li>
+<li>子网的划分：对最基本的编址方法的改进</li>
+<li>构成超网：比较新的无分类编址方法</li>
+</ol>
+<h3 id="三种编址模式下，IP地址的格式特点。"><a href="#三种编址模式下，IP地址的格式特点。" class="headerlink" title="三种编址模式下，IP地址的格式特点。"></a>三种编址模式下，IP地址的格式特点。</h3><p>1）分类的IP地址：两级地址。IP地址::={ &lt;网络号&gt;, &lt;主机号&gt;}<br>2）子网的划分：三级地址。IP地址::= {&lt;网络号&gt;, &lt;子网号&gt;, &lt;主机号&gt;}<br>3）构成超网：无分类两级地址。IP地址::= {&lt;网络前缀&gt;, &lt;主机号&gt;}</p>
+<h3 id="会正确计算三种编址方法下，一个IP网络的有效地址范围。"><a href="#会正确计算三种编址方法下，一个IP网络的有效地址范围。" class="headerlink" title="会正确计算三种编址方法下，一个IP网络的有效地址范围。"></a>会正确计算三种编址方法下，一个IP网络的有效地址范围。</h3><p>具体做法可以看书上例题，需要注意的是全0和全1的主机无效。</p>
+<h3 id="掌握三种编址方法下，路由器的分组转发的流程。"><a href="#掌握三种编址方法下，路由器的分组转发的流程。" class="headerlink" title="掌握三种编址方法下，路由器的分组转发的流程。"></a>掌握三种编址方法下，路由器的分组转发的流程。</h3><p>分类的IP地址：(1) 从数据报的首部提取目的主机的IP地址D, 得出目的网络地址为N。<br>(2) 若网络N 与此路由器直接相连，则把数据报直接交付目的主机D；否则是间接交付，执行(3)。<br>(3) 若路由表中有目的地址为D 的特定主机路由，则把数据报传送给路由表中所指明的下一跳路由器；否则，执行(4)。<br>(4) 若路由表中有到达网络N的路由，则把数据报传送给路由表指明的下一跳路由器；否则，执行(5)。<br>(5) 若路由表中有一个默认路由，则把数据报传送给路由表中所指明的默认路由器；否则，执行(6)。<br>(6) 报告转发分组出错。</p>
+<p>划分子网时：<br>(1) 从收到的分组的首部提取目的IP地址D。<br>(2) 先用各网络的子网掩码和D 逐位相“与”，看是否和相应的网络地址匹配。若匹配，则将分组直接交付。否则就是间接交付，执行(3)。<br>(3) 若路由表中有目的地址为D的特定主机路由，则将 分组传送给指明的下一跳路由器；否则，执行(4)。<br>(4) 对路由表中的每一行的子网掩码和D逐位相“与”， 若其结果N与该行的目的网络地址匹配，则将分组传送给该行指明的下一跳路由器；否则，执行(5)。<br>(5) 若路由表中有一个默认路由，则将分组传送给路由表中所指明的默认路由器；否则，执行(6)。<br>(6) 报告转发分组出错。</p>
+<p>构成超网时：仍采用分组转发算法，只是在查找路由表时使用最长前缀匹配或二叉线索法。</p>
+<h3 id="ARP的工作原理，路由器是如何确定下一站的物理地址的？"><a href="#ARP的工作原理，路由器是如何确定下一站的物理地址的？" class="headerlink" title="ARP的工作原理，路由器是如何确定下一站的物理地址的？"></a>ARP的工作原理，路由器是如何确定下一站的物理地址的？</h3><ul>
+<li><strong>工作原理</strong>：每一个主机都设有一个ARP高速缓存(ARP cache)，里面有所在的局域网上的各主机和路由器的IP地址到硬件地址的映射表。当主机A欲向本局域网上的某个主机B发送IP数据报时，就先在其ARP高速缓存中查看有无主机B的IP地址。如有，就可查出其对应的硬件地址，再将此硬件地址写入MAC帧，然后通过局域网将该MAC帧发往此硬件地址。当路由器或主机查不到B的IP地址时，A就自动运行ARP，ARP进程通过在本局域网上发送ARP请求分组广播并接收B返回的ARP响应分组，再在A的ARP高速缓存中写入B的IP地址到硬件地址的映射（此时B也会在自己的ARP高速缓存中写入A的地址映射）。另外，高速缓存中的每一个映射项目都设置有生存时间。</li>
+<li><strong>路由器确定物理地址</strong>：路由器收到某主机发送过来的IP数据报后，就从转发表中找出下一跳的路由器，同时使用ARP解析出下一跳路由器的硬件地址，也就是下一站的物理地址。</li>
+</ul>
+<h3 id="IP数据报的格式。IP分段（或分片）与重组。分片与重组发生的位置？"><a href="#IP数据报的格式。IP分段（或分片）与重组。分片与重组发生的位置？" class="headerlink" title="IP数据报的格式。IP分段（或分片）与重组。分片与重组发生的位置？"></a>IP数据报的格式。IP分段（或分片）与重组。分片与重组发生的位置？</h3><p><img src="https://github.com/CyC2018/Interview-Notebook/blob/master/pics/85c05fb1-5546-4c50-9221-21f231cdc8c5.jpg" alt="IP数据报"><br>一个IP数据报由首部和数据两部分组成。首部的前一部分是固定长度，共20 字节，是所有IP 数据报必须具有的。在首部的固定部分的后面是一些可选字段，其长度是可变的。</p>
+<p>当数据报的长度超过网络所允许的最大传送单元MTU时，需对数据报进行分片后再传输，每个分片的长度是8字节的整数倍。</p>
+<p>分片的位置通过片偏移来体现，表现了某片在原分组的相对位置。</p>
+<h3 id="RIP中“距离”的含义是什么？RIP的工作原理。"><a href="#RIP中“距离”的含义是什么？RIP的工作原理。" class="headerlink" title="RIP中“距离”的含义是什么？RIP的工作原理。"></a>RIP中“距离”的含义是什么？RIP的工作原理。</h3><ul>
+<li><p><strong>距离</strong>：RIP中对距离的定义是从一路由器到直接相连的网络的距离定义为1，到非直接相连的网络的距离定义为经过的路由器数加一。</p>
+</li>
+<li><p><strong>原理</strong>：路由器在刚开始工作时，路由表是空的，然后路由器就得出到直接相连的几个网络的距离。接着每一个路由器也只和数目非常有限的相邻路由器交换并更新路由信息。但经过若干次更新后，所有的路由器最终都会知道到达本自治系统中任何一个网络的最短距离和下一跳的路由器的地址。</p>
+</li>
+</ul>
+<h3 id="OSPF中“链路状态”的含义是什么。OSPF的工作原理。"><a href="#OSPF中“链路状态”的含义是什么。OSPF的工作原理。" class="headerlink" title="OSPF中“链路状态”的含义是什么。OSPF的工作原理。"></a>OSPF中“链路状态”的含义是什么。OSPF的工作原理。</h3><ul>
+<li><strong>链路状态</strong>：所谓链路状态就是说明本路由器都和哪些路由器相邻，以及该链路的度量（metric），度量也可以理解为代价。</li>
+</ul>
+<h3 id="路由器的结构及工作原理。"><a href="#路由器的结构及工作原理。" class="headerlink" title="路由器的结构及工作原理。"></a>路由器的结构及工作原理。</h3><p>结构上划分为路由选择部分和分组转发部分。</p>
+<h3 id="什么是自治系统AS？域内路由选择与域间路由选择有何应用区别？给有哪些代表协议？"><a href="#什么是自治系统AS？域内路由选择与域间路由选择有何应用区别？给有哪些代表协议？" class="headerlink" title="什么是自治系统AS？域内路由选择与域间路由选择有何应用区别？给有哪些代表协议？"></a>什么是自治系统AS？域内路由选择与域间路由选择有何应用区别？给有哪些代表协议？</h3><ul>
+<li><p><strong>AS</strong>:自治系统是在单一技术管理下的一组路由器，这些路由器使用一种自治系统内部的路由选择协议和共同的度量。</p>
+</li>
+<li><p><strong>区别</strong>：域内路由选择是在自治系统内部的路由选择，与互联网其他自治系统使用什么路由选择协议无关，常用RIP和OSPF协议；域间路由选择是自治系统之间的路由选择，当源主机和目的主机不在同一个自治系统时，当数据报传送到一个自治系统的边界时，就需要使用一种协议将路由选择信息传递到另一个自治系统中，常用BGP协议。</p>
+</li>
+</ul>
+<h3 id="路由选择协议与路由转发策略是否是一回事？路由器中路由表与转发表的区别？"><a href="#路由选择协议与路由转发策略是否是一回事？路由器中路由表与转发表的区别？" class="headerlink" title="路由选择协议与路由转发策略是否是一回事？路由器中路由表与转发表的区别？"></a>路由选择协议与路由转发策略是否是一回事？路由器中路由表与转发表的区别？</h3><ul>
+<li><p>路由选择协议解决的是如何获得路由表中的路由信息，指的是路由选择策略,路由选择涉及多个路由器。<br>路由转发策略指路由器根据转发表将用户的 IP 数据报从合适的端口转发出去,涉及一个路由器。</p>
+</li>
+<li><p>区别：1）路由表一般包含从目的地址到下一跳的映射；转发表必须包含完成转发功能的所必需的信息。<br>2）路由表是根据路由选择算法得出的。而转发表是从路由表得出的。<br>3）路由表和转发表应采用不同的数据结构。路由表需要对网络拓扑变化的计算最优化，而转发表应当使得查找过程最优化。<br>4）路由表总是通过软件来实现，而转发表可用特殊的硬件实现。</p>
+</li>
+</ul>
+<hr>
+<p>2018 年 5月 5日</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>原创技术分享,爱您哟</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="马国航 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="马国航 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/计算机网络/" rel="tag"># 计算机网络</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/04/计算机网络数据链路层/" rel="next" title="计算机网络数据链路层">
+                <i class="fa fa-chevron-left"></i> 计算机网络数据链路层
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjc1NC85MzE1"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="马国航" />
+            
+              <p class="site-author-name" itemprop="name">马国航</p>
+              <p class="site-description motion-element" itemprop="description">用代码书写人生，用音乐诠释生活</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/cravinglove" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:guohangma@gmail.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://weibo.com/3315582295/profile?topnav=1&wvr=6&is_all=1" target="_blank" title="微博">
+                    
+                      <i class="fa fa-fw fa-globe"></i>微博</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#网络层"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x7F51;&#x7EDC;&#x5C42;" class="headerlink" title="&#x7F51;&#x7EDC;&#x5C42;"></a>&#x7F51;&#x7EDC;&#x5C42;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#&#x6982;&#x5FF5;" class="headerlink" title="&#x6982;&#x5FF5;"></a>&#x6982;&#x5FF5;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问答"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#&#x95EE;&#x7B54;" class="headerlink" title="&#x95EE;&#x7B54;"></a>&#x95EE;&#x7B54;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络层的任务"><span class="nav-number">1.2.1.</span> <span class="nav-text"><a href="#&#x7F51;&#x7EDC;&#x5C42;&#x7684;&#x4EFB;&#x52A1;" class="headerlink" title="&#x7F51;&#x7EDC;&#x5C42;&#x7684;&#x4EFB;&#x52A1;"></a>&#x7F51;&#x7EDC;&#x5C42;&#x7684;&#x4EFB;&#x52A1;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络层有那两类服务？各有何优缺点？因特网采纳了何种服务"><span class="nav-number">1.2.2.</span> <span class="nav-text"><a href="#&#x7F51;&#x7EDC;&#x5C42;&#x6709;&#x90A3;&#x4E24;&#x7C7B;&#x670D;&#x52A1;&#xFF1F;&#x5404;&#x6709;&#x4F55;&#x4F18;&#x7F3A;&#x70B9;&#xFF1F;&#x56E0;&#x7279;&#x7F51;&#x91C7;&#x7EB3;&#x4E86;&#x4F55;&#x79CD;&#x670D;&#x52A1;" class="headerlink" title="&#x7F51;&#x7EDC;&#x5C42;&#x6709;&#x90A3;&#x4E24;&#x7C7B;&#x670D;&#x52A1;&#xFF1F;&#x5404;&#x6709;&#x4F55;&#x4F18;&#x7F3A;&#x70B9;&#xFF1F;&#x56E0;&#x7279;&#x7F51;&#x91C7;&#x7EB3;&#x4E86;&#x4F55;&#x79CD;&#x670D;&#x52A1;"></a>&#x7F51;&#x7EDC;&#x5C42;&#x6709;&#x90A3;&#x4E24;&#x7C7B;&#x670D;&#x52A1;&#xFF1F;&#x5404;&#x6709;&#x4F55;&#x4F18;&#x7F3A;&#x70B9;&#xFF1F;&#x56E0;&#x7279;&#x7F51;&#x91C7;&#x7EB3;&#x4E86;&#x4F55;&#x79CD;&#x670D;&#x52A1;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP协议的用途，IP是否提供可靠的网络通讯。"><span class="nav-number">1.2.3.</span> <span class="nav-text"><a href="#IP&#x534F;&#x8BAE;&#x7684;&#x7528;&#x9014;&#xFF0C;IP&#x662F;&#x5426;&#x63D0;&#x4F9B;&#x53EF;&#x9760;&#x7684;&#x7F51;&#x7EDC;&#x901A;&#x8BAF;&#x3002;" class="headerlink" title="IP&#x534F;&#x8BAE;&#x7684;&#x7528;&#x9014;&#xFF0C;IP&#x662F;&#x5426;&#x63D0;&#x4F9B;&#x53EF;&#x9760;&#x7684;&#x7F51;&#x7EDC;&#x901A;&#x8BAF;&#x3002;"></a>IP&#x534F;&#x8BAE;&#x7684;&#x7528;&#x9014;&#xFF0C;IP&#x662F;&#x5426;&#x63D0;&#x4F9B;&#x53EF;&#x9760;&#x7684;&#x7F51;&#x7EDC;&#x901A;&#x8BAF;&#x3002;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP地址的编址方法有那三类？"><span class="nav-number">1.2.4.</span> <span class="nav-text"><a href="#IP&#x5730;&#x5740;&#x7684;&#x7F16;&#x5740;&#x65B9;&#x6CD5;&#x6709;&#x90A3;&#x4E09;&#x7C7B;&#xFF1F;" class="headerlink" title="IP&#x5730;&#x5740;&#x7684;&#x7F16;&#x5740;&#x65B9;&#x6CD5;&#x6709;&#x90A3;&#x4E09;&#x7C7B;&#xFF1F;"></a>IP&#x5730;&#x5740;&#x7684;&#x7F16;&#x5740;&#x65B9;&#x6CD5;&#x6709;&#x90A3;&#x4E09;&#x7C7B;&#xFF1F;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三种编址模式下，IP地址的格式特点。"><span class="nav-number">1.2.5.</span> <span class="nav-text"><a href="#&#x4E09;&#x79CD;&#x7F16;&#x5740;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;IP&#x5730;&#x5740;&#x7684;&#x683C;&#x5F0F;&#x7279;&#x70B9;&#x3002;" class="headerlink" title="&#x4E09;&#x79CD;&#x7F16;&#x5740;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;IP&#x5730;&#x5740;&#x7684;&#x683C;&#x5F0F;&#x7279;&#x70B9;&#x3002;"></a>&#x4E09;&#x79CD;&#x7F16;&#x5740;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;IP&#x5730;&#x5740;&#x7684;&#x683C;&#x5F0F;&#x7279;&#x70B9;&#x3002;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#会正确计算三种编址方法下，一个IP网络的有效地址范围。"><span class="nav-number">1.2.6.</span> <span class="nav-text"><a href="#&#x4F1A;&#x6B63;&#x786E;&#x8BA1;&#x7B97;&#x4E09;&#x79CD;&#x7F16;&#x5740;&#x65B9;&#x6CD5;&#x4E0B;&#xFF0C;&#x4E00;&#x4E2A;IP&#x7F51;&#x7EDC;&#x7684;&#x6709;&#x6548;&#x5730;&#x5740;&#x8303;&#x56F4;&#x3002;" class="headerlink" title="&#x4F1A;&#x6B63;&#x786E;&#x8BA1;&#x7B97;&#x4E09;&#x79CD;&#x7F16;&#x5740;&#x65B9;&#x6CD5;&#x4E0B;&#xFF0C;&#x4E00;&#x4E2A;IP&#x7F51;&#x7EDC;&#x7684;&#x6709;&#x6548;&#x5730;&#x5740;&#x8303;&#x56F4;&#x3002;"></a>&#x4F1A;&#x6B63;&#x786E;&#x8BA1;&#x7B97;&#x4E09;&#x79CD;&#x7F16;&#x5740;&#x65B9;&#x6CD5;&#x4E0B;&#xFF0C;&#x4E00;&#x4E2A;IP&#x7F51;&#x7EDC;&#x7684;&#x6709;&#x6548;&#x5730;&#x5740;&#x8303;&#x56F4;&#x3002;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#掌握三种编址方法下，路由器的分组转发的流程。"><span class="nav-number">1.2.7.</span> <span class="nav-text"><a href="#&#x638C;&#x63E1;&#x4E09;&#x79CD;&#x7F16;&#x5740;&#x65B9;&#x6CD5;&#x4E0B;&#xFF0C;&#x8DEF;&#x7531;&#x5668;&#x7684;&#x5206;&#x7EC4;&#x8F6C;&#x53D1;&#x7684;&#x6D41;&#x7A0B;&#x3002;" class="headerlink" title="&#x638C;&#x63E1;&#x4E09;&#x79CD;&#x7F16;&#x5740;&#x65B9;&#x6CD5;&#x4E0B;&#xFF0C;&#x8DEF;&#x7531;&#x5668;&#x7684;&#x5206;&#x7EC4;&#x8F6C;&#x53D1;&#x7684;&#x6D41;&#x7A0B;&#x3002;"></a>&#x638C;&#x63E1;&#x4E09;&#x79CD;&#x7F16;&#x5740;&#x65B9;&#x6CD5;&#x4E0B;&#xFF0C;&#x8DEF;&#x7531;&#x5668;&#x7684;&#x5206;&#x7EC4;&#x8F6C;&#x53D1;&#x7684;&#x6D41;&#x7A0B;&#x3002;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARP的工作原理，路由器是如何确定下一站的物理地址的？"><span class="nav-number">1.2.8.</span> <span class="nav-text"><a href="#ARP&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#xFF0C;&#x8DEF;&#x7531;&#x5668;&#x662F;&#x5982;&#x4F55;&#x786E;&#x5B9A;&#x4E0B;&#x4E00;&#x7AD9;&#x7684;&#x7269;&#x7406;&#x5730;&#x5740;&#x7684;&#xFF1F;" class="headerlink" title="ARP&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#xFF0C;&#x8DEF;&#x7531;&#x5668;&#x662F;&#x5982;&#x4F55;&#x786E;&#x5B9A;&#x4E0B;&#x4E00;&#x7AD9;&#x7684;&#x7269;&#x7406;&#x5730;&#x5740;&#x7684;&#xFF1F;"></a>ARP&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#xFF0C;&#x8DEF;&#x7531;&#x5668;&#x662F;&#x5982;&#x4F55;&#x786E;&#x5B9A;&#x4E0B;&#x4E00;&#x7AD9;&#x7684;&#x7269;&#x7406;&#x5730;&#x5740;&#x7684;&#xFF1F;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP数据报的格式。IP分段（或分片）与重组。分片与重组发生的位置？"><span class="nav-number">1.2.9.</span> <span class="nav-text"><a href="#IP&#x6570;&#x636E;&#x62A5;&#x7684;&#x683C;&#x5F0F;&#x3002;IP&#x5206;&#x6BB5;&#xFF08;&#x6216;&#x5206;&#x7247;&#xFF09;&#x4E0E;&#x91CD;&#x7EC4;&#x3002;&#x5206;&#x7247;&#x4E0E;&#x91CD;&#x7EC4;&#x53D1;&#x751F;&#x7684;&#x4F4D;&#x7F6E;&#xFF1F;" class="headerlink" title="IP&#x6570;&#x636E;&#x62A5;&#x7684;&#x683C;&#x5F0F;&#x3002;IP&#x5206;&#x6BB5;&#xFF08;&#x6216;&#x5206;&#x7247;&#xFF09;&#x4E0E;&#x91CD;&#x7EC4;&#x3002;&#x5206;&#x7247;&#x4E0E;&#x91CD;&#x7EC4;&#x53D1;&#x751F;&#x7684;&#x4F4D;&#x7F6E;&#xFF1F;"></a>IP&#x6570;&#x636E;&#x62A5;&#x7684;&#x683C;&#x5F0F;&#x3002;IP&#x5206;&#x6BB5;&#xFF08;&#x6216;&#x5206;&#x7247;&#xFF09;&#x4E0E;&#x91CD;&#x7EC4;&#x3002;&#x5206;&#x7247;&#x4E0E;&#x91CD;&#x7EC4;&#x53D1;&#x751F;&#x7684;&#x4F4D;&#x7F6E;&#xFF1F;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RIP中“距离”的含义是什么？RIP的工作原理。"><span class="nav-number">1.2.10.</span> <span class="nav-text"><a href="#RIP&#x4E2D;&#x201C;&#x8DDD;&#x79BB;&#x201D;&#x7684;&#x542B;&#x4E49;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;RIP&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x3002;" class="headerlink" title="RIP&#x4E2D;&#x201C;&#x8DDD;&#x79BB;&#x201D;&#x7684;&#x542B;&#x4E49;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;RIP&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x3002;"></a>RIP&#x4E2D;&#x201C;&#x8DDD;&#x79BB;&#x201D;&#x7684;&#x542B;&#x4E49;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;RIP&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x3002;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OSPF中“链路状态”的含义是什么。OSPF的工作原理。"><span class="nav-number">1.2.11.</span> <span class="nav-text"><a href="#OSPF&#x4E2D;&#x201C;&#x94FE;&#x8DEF;&#x72B6;&#x6001;&#x201D;&#x7684;&#x542B;&#x4E49;&#x662F;&#x4EC0;&#x4E48;&#x3002;OSPF&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x3002;" class="headerlink" title="OSPF&#x4E2D;&#x201C;&#x94FE;&#x8DEF;&#x72B6;&#x6001;&#x201D;&#x7684;&#x542B;&#x4E49;&#x662F;&#x4EC0;&#x4E48;&#x3002;OSPF&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x3002;"></a>OSPF&#x4E2D;&#x201C;&#x94FE;&#x8DEF;&#x72B6;&#x6001;&#x201D;&#x7684;&#x542B;&#x4E49;&#x662F;&#x4EC0;&#x4E48;&#x3002;OSPF&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x3002;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由器的结构及工作原理。"><span class="nav-number">1.2.12.</span> <span class="nav-text"><a href="#&#x8DEF;&#x7531;&#x5668;&#x7684;&#x7ED3;&#x6784;&#x53CA;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x3002;" class="headerlink" title="&#x8DEF;&#x7531;&#x5668;&#x7684;&#x7ED3;&#x6784;&#x53CA;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x3002;"></a>&#x8DEF;&#x7531;&#x5668;&#x7684;&#x7ED3;&#x6784;&#x53CA;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x3002;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是自治系统AS？域内路由选择与域间路由选择有何应用区别？给有哪些代表协议？"><span class="nav-number">1.2.13.</span> <span class="nav-text"><a href="#&#x4EC0;&#x4E48;&#x662F;&#x81EA;&#x6CBB;&#x7CFB;&#x7EDF;AS&#xFF1F;&#x57DF;&#x5185;&#x8DEF;&#x7531;&#x9009;&#x62E9;&#x4E0E;&#x57DF;&#x95F4;&#x8DEF;&#x7531;&#x9009;&#x62E9;&#x6709;&#x4F55;&#x5E94;&#x7528;&#x533A;&#x522B;&#xFF1F;&#x7ED9;&#x6709;&#x54EA;&#x4E9B;&#x4EE3;&#x8868;&#x534F;&#x8BAE;&#xFF1F;" class="headerlink" title="&#x4EC0;&#x4E48;&#x662F;&#x81EA;&#x6CBB;&#x7CFB;&#x7EDF;AS&#xFF1F;&#x57DF;&#x5185;&#x8DEF;&#x7531;&#x9009;&#x62E9;&#x4E0E;&#x57DF;&#x95F4;&#x8DEF;&#x7531;&#x9009;&#x62E9;&#x6709;&#x4F55;&#x5E94;&#x7528;&#x533A;&#x522B;&#xFF1F;&#x7ED9;&#x6709;&#x54EA;&#x4E9B;&#x4EE3;&#x8868;&#x534F;&#x8BAE;&#xFF1F;"></a>&#x4EC0;&#x4E48;&#x662F;&#x81EA;&#x6CBB;&#x7CFB;&#x7EDF;AS&#xFF1F;&#x57DF;&#x5185;&#x8DEF;&#x7531;&#x9009;&#x62E9;&#x4E0E;&#x57DF;&#x95F4;&#x8DEF;&#x7531;&#x9009;&#x62E9;&#x6709;&#x4F55;&#x5E94;&#x7528;&#x533A;&#x522B;&#xFF1F;&#x7ED9;&#x6709;&#x54EA;&#x4E9B;&#x4EE3;&#x8868;&#x534F;&#x8BAE;&#xFF1F;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由选择协议与路由转发策略是否是一回事？路由器中路由表与转发表的区别？"><span class="nav-number">1.2.14.</span> <span class="nav-text"><a href="#&#x8DEF;&#x7531;&#x9009;&#x62E9;&#x534F;&#x8BAE;&#x4E0E;&#x8DEF;&#x7531;&#x8F6C;&#x53D1;&#x7B56;&#x7565;&#x662F;&#x5426;&#x662F;&#x4E00;&#x56DE;&#x4E8B;&#xFF1F;&#x8DEF;&#x7531;&#x5668;&#x4E2D;&#x8DEF;&#x7531;&#x8868;&#x4E0E;&#x8F6C;&#x53D1;&#x8868;&#x7684;&#x533A;&#x522B;&#xFF1F;" class="headerlink" title="&#x8DEF;&#x7531;&#x9009;&#x62E9;&#x534F;&#x8BAE;&#x4E0E;&#x8DEF;&#x7531;&#x8F6C;&#x53D1;&#x7B56;&#x7565;&#x662F;&#x5426;&#x662F;&#x4E00;&#x56DE;&#x4E8B;&#xFF1F;&#x8DEF;&#x7531;&#x5668;&#x4E2D;&#x8DEF;&#x7531;&#x8868;&#x4E0E;&#x8F6C;&#x53D1;&#x8868;&#x7684;&#x533A;&#x522B;&#xFF1F;"></a>&#x8DEF;&#x7531;&#x9009;&#x62E9;&#x534F;&#x8BAE;&#x4E0E;&#x8DEF;&#x7531;&#x8F6C;&#x53D1;&#x7B56;&#x7565;&#x662F;&#x5426;&#x662F;&#x4E00;&#x56DE;&#x4E8B;&#xFF1F;&#x8DEF;&#x7531;&#x5668;&#x4E2D;&#x8DEF;&#x7531;&#x8868;&#x4E0E;&#x8F6C;&#x53D1;&#x8868;&#x7684;&#x533A;&#x522B;&#xFF1F;</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">马国航</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("E7c1GBJunsBo04LGNRA1Fzk0-gzGzoHsz", "aPr4FXuLhzMi1mbeDokSTeuv");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

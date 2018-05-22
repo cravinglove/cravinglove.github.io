@@ -262,6 +262,894 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/计算机网络网络层/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="马国航">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Macon's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/05/计算机网络网络层/" itemprop="url">计算机网络网络层</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T00:46:25+08:00">
+                2018-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机网络/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/05/05/计算机网络网络层/" class="leancloud_visitors" data-flag-title="计算机网络网络层">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ol>
+<li>虚电路：一条逻辑上的连接，分组都沿着这条逻辑连接按照存储转发的方式传送，而不是真正建立了一条物理连接。</li>
+<li>IP（网际协议）:TCP/IP体系中两个最主要的协议之一，也是最重要的互联网标准之一，与ARP、ICMP、IGMP配套使用。</li>
+<li>ARP：地址解析协议，用于从IP地址到MAC地址的转换</li>
+<li>ICMP:网际控制报文协议，允许主机或路由器报告差错情况和有关异常情况的报告。</li>
+<li>子网掩码:子网掩码用于确定关于子网划分的信息，并标识IP地址中的网络部分和主机部分。</li>
+<li>CIDR:称为无分类域间路由选择，使用斜线记法标明前缀和主机号，网络前缀代替了网络号和子网号。</li>
+<li>默认路由：路由表中无法查找到目的地址的路由信息，路由器选择的路由。</li>
+<li>路由选择算法：</li>
+<li>自治系统AS:在单一技术管理下的一组路由器，使用统一的路由选择协议和共同的度量。对其他AS表现出单一和一致的路由选择策略。</li>
+<li>IGP（内部网关协议）：一个自治系统内部使用的路由选择协议，与其他自治系统使用什么路由选择协议无关，常用RIP和OSPF协议。</li>
+<li>EGP(外部网关协议):简言之就是自治系统之间使用的路由选择协议，比如常用的BGP的第四个版本BGP-4。</li>
+<li>RIP协议:是一种分布式的基于距离向量的路由选择协议，是互联网的标准协议，最大优点是简单。维护自己到其他每一个目的网络的距离记录，这是一组距离，即距离向量。</li>
+<li>OSPF（开放最短路径优先）协议：最主要的特征是使用分布式的链路状态协议，而不是像RIP一样的距离向量协议。</li>
+<li>BGP（边界网关协议）:在不同自治系统交换路由信息的协议。</li>
+<li>IPV6:下一代网际协议，IP协议的另一个版本。</li>
+</ol>
+<h2 id="问答"><a href="#问答" class="headerlink" title="问答"></a>问答</h2><h3 id="网络层的任务"><a href="#网络层的任务" class="headerlink" title="网络层的任务"></a>网络层的任务</h3><p>网络层向上只提供简单灵活的、无连接的、尽最大努力交付的数据报服务。</p>
+<h3 id="网络层有那两类服务？各有何优缺点？因特网采纳了何种服务"><a href="#网络层有那两类服务？各有何优缺点？因特网采纳了何种服务" class="headerlink" title="网络层有那两类服务？各有何优缺点？因特网采纳了何种服务"></a>网络层有那两类服务？各有何优缺点？因特网采纳了何种服务</h3><ul>
+<li>虚电路服务和数据报服务。</li>
+<li>虚电路服务优点是减少了分组的开销，若使用可靠传输的网络协议，就可以使得分组无差错按需到达终点；缺点是网络造价高并且不太灵活，所有数据都按相同的路由发送，中间某结点发生故障就导致整个线路中断，数据无法继续发送。</li>
+<li>数据报服务优点是造价大大降低，运行方式灵活，可适应多种应用；缺点是发送的分组可能出错丢失重复和失序等，不保证交付的时限。</li>
+<li>因特网采用数据报服务。</li>
+</ul>
+<h3 id="IP协议的用途，IP是否提供可靠的网络通讯。"><a href="#IP协议的用途，IP是否提供可靠的网络通讯。" class="headerlink" title="IP协议的用途，IP是否提供可靠的网络通讯。"></a>IP协议的用途，IP是否提供可靠的网络通讯。</h3><p>当互连在一起的计算机网络都是用相同的IP协议时，就可以使得性能各异的网络在网络层看起来好像是一个统一的网络。<br>不提供可靠的网络通讯，提供尽最大努力交付数据报服务。</p>
+<h3 id="IP地址的编址方法有那三类？"><a href="#IP地址的编址方法有那三类？" class="headerlink" title="IP地址的编址方法有那三类？"></a>IP地址的编址方法有那三类？</h3><p>三个历史阶段</p>
+<ol>
+<li>分类的IP地址：最基本的编址方法</li>
+<li>子网的划分：对最基本的编址方法的改进</li>
+<li>构成超网：比较新的无分类编址方法</li>
+</ol>
+<h3 id="三种编址模式下，IP地址的格式特点。"><a href="#三种编址模式下，IP地址的格式特点。" class="headerlink" title="三种编址模式下，IP地址的格式特点。"></a>三种编址模式下，IP地址的格式特点。</h3><p>1）分类的IP地址：两级地址。IP地址::={ &lt;网络号&gt;, &lt;主机号&gt;}<br>2）子网的划分：三级地址。IP地址::= {&lt;网络号&gt;, &lt;子网号&gt;, &lt;主机号&gt;}<br>3）构成超网：无分类两级地址。IP地址::= {&lt;网络前缀&gt;, &lt;主机号&gt;}</p>
+<h3 id="会正确计算三种编址方法下，一个IP网络的有效地址范围。"><a href="#会正确计算三种编址方法下，一个IP网络的有效地址范围。" class="headerlink" title="会正确计算三种编址方法下，一个IP网络的有效地址范围。"></a>会正确计算三种编址方法下，一个IP网络的有效地址范围。</h3><p>具体做法可以看书上例题，需要注意的是全0和全1的主机无效。</p>
+<h3 id="掌握三种编址方法下，路由器的分组转发的流程。"><a href="#掌握三种编址方法下，路由器的分组转发的流程。" class="headerlink" title="掌握三种编址方法下，路由器的分组转发的流程。"></a>掌握三种编址方法下，路由器的分组转发的流程。</h3><p>分类的IP地址：(1) 从数据报的首部提取目的主机的IP地址D, 得出目的网络地址为N。<br>(2) 若网络N 与此路由器直接相连，则把数据报直接交付目的主机D；否则是间接交付，执行(3)。<br>(3) 若路由表中有目的地址为D 的特定主机路由，则把数据报传送给路由表中所指明的下一跳路由器；否则，执行(4)。<br>(4) 若路由表中有到达网络N的路由，则把数据报传送给路由表指明的下一跳路由器；否则，执行(5)。<br>(5) 若路由表中有一个默认路由，则把数据报传送给路由表中所指明的默认路由器；否则，执行(6)。<br>(6) 报告转发分组出错。</p>
+<p>划分子网时：<br>(1) 从收到的分组的首部提取目的IP地址D。<br>(2) 先用各网络的子网掩码和D 逐位相“与”，看是否和相应的网络地址匹配。若匹配，则将分组直接交付。否则就是间接交付，执行(3)。<br>(3) 若路由表中有目的地址为D的特定主机路由，则将 分组传送给指明的下一跳路由器；否则，执行(4)。<br>(4) 对路由表中的每一行的子网掩码和D逐位相“与”， 若其结果N与该行的目的网络地址匹配，则将分组传送给该行指明的下一跳路由器；否则，执行(5)。<br>(5) 若路由表中有一个默认路由，则将分组传送给路由表中所指明的默认路由器；否则，执行(6)。<br>(6) 报告转发分组出错。</p>
+<p>构成超网时：仍采用分组转发算法，只是在查找路由表时使用最长前缀匹配或二叉线索法。</p>
+<h3 id="ARP的工作原理，路由器是如何确定下一站的物理地址的？"><a href="#ARP的工作原理，路由器是如何确定下一站的物理地址的？" class="headerlink" title="ARP的工作原理，路由器是如何确定下一站的物理地址的？"></a>ARP的工作原理，路由器是如何确定下一站的物理地址的？</h3><ul>
+<li><strong>工作原理</strong>：每一个主机都设有一个ARP高速缓存(ARP cache)，里面有所在的局域网上的各主机和路由器的IP地址到硬件地址的映射表。当主机A欲向本局域网上的某个主机B发送IP数据报时，就先在其ARP高速缓存中查看有无主机B的IP地址。如有，就可查出其对应的硬件地址，再将此硬件地址写入MAC帧，然后通过局域网将该MAC帧发往此硬件地址。当路由器或主机查不到B的IP地址时，A就自动运行ARP，ARP进程通过在本局域网上发送ARP请求分组广播并接收B返回的ARP响应分组，再在A的ARP高速缓存中写入B的IP地址到硬件地址的映射（此时B也会在自己的ARP高速缓存中写入A的地址映射）。另外，高速缓存中的每一个映射项目都设置有生存时间。</li>
+<li><strong>路由器确定物理地址</strong>：路由器收到某主机发送过来的IP数据报后，就从转发表中找出下一跳的路由器，同时使用ARP解析出下一跳路由器的硬件地址，也就是下一站的物理地址。</li>
+</ul>
+<h3 id="IP数据报的格式。IP分段（或分片）与重组。分片与重组发生的位置？"><a href="#IP数据报的格式。IP分段（或分片）与重组。分片与重组发生的位置？" class="headerlink" title="IP数据报的格式。IP分段（或分片）与重组。分片与重组发生的位置？"></a>IP数据报的格式。IP分段（或分片）与重组。分片与重组发生的位置？</h3><p><img src="https://github.com/CyC2018/Interview-Notebook/blob/master/pics/85c05fb1-5546-4c50-9221-21f231cdc8c5.jpg" alt="IP数据报"><br>一个IP数据报由首部和数据两部分组成。首部的前一部分是固定长度，共20 字节，是所有IP 数据报必须具有的。在首部的固定部分的后面是一些可选字段，其长度是可变的。</p>
+<p>当数据报的长度超过网络所允许的最大传送单元MTU时，需对数据报进行分片后再传输，每个分片的长度是8字节的整数倍。</p>
+<p>分片的位置通过片偏移来体现，表现了某片在原分组的相对位置。</p>
+<h3 id="RIP中“距离”的含义是什么？RIP的工作原理。"><a href="#RIP中“距离”的含义是什么？RIP的工作原理。" class="headerlink" title="RIP中“距离”的含义是什么？RIP的工作原理。"></a>RIP中“距离”的含义是什么？RIP的工作原理。</h3><ul>
+<li><p><strong>距离</strong>：RIP中对距离的定义是从一路由器到直接相连的网络的距离定义为1，到非直接相连的网络的距离定义为经过的路由器数加一。</p>
+</li>
+<li><p><strong>原理</strong>：路由器在刚开始工作时，路由表是空的，然后路由器就得出到直接相连的几个网络的距离。接着每一个路由器也只和数目非常有限的相邻路由器交换并更新路由信息。但经过若干次更新后，所有的路由器最终都会知道到达本自治系统中任何一个网络的最短距离和下一跳的路由器的地址。</p>
+</li>
+</ul>
+<h3 id="OSPF中“链路状态”的含义是什么。OSPF的工作原理。"><a href="#OSPF中“链路状态”的含义是什么。OSPF的工作原理。" class="headerlink" title="OSPF中“链路状态”的含义是什么。OSPF的工作原理。"></a>OSPF中“链路状态”的含义是什么。OSPF的工作原理。</h3><ul>
+<li><strong>链路状态</strong>：所谓链路状态就是说明本路由器都和哪些路由器相邻，以及该链路的度量（metric），度量也可以理解为代价。</li>
+</ul>
+<h3 id="路由器的结构及工作原理。"><a href="#路由器的结构及工作原理。" class="headerlink" title="路由器的结构及工作原理。"></a>路由器的结构及工作原理。</h3><p>结构上划分为路由选择部分和分组转发部分。</p>
+<h3 id="什么是自治系统AS？域内路由选择与域间路由选择有何应用区别？给有哪些代表协议？"><a href="#什么是自治系统AS？域内路由选择与域间路由选择有何应用区别？给有哪些代表协议？" class="headerlink" title="什么是自治系统AS？域内路由选择与域间路由选择有何应用区别？给有哪些代表协议？"></a>什么是自治系统AS？域内路由选择与域间路由选择有何应用区别？给有哪些代表协议？</h3><ul>
+<li><p><strong>AS</strong>:自治系统是在单一技术管理下的一组路由器，这些路由器使用一种自治系统内部的路由选择协议和共同的度量。</p>
+</li>
+<li><p><strong>区别</strong>：域内路由选择是在自治系统内部的路由选择，与互联网其他自治系统使用什么路由选择协议无关，常用RIP和OSPF协议；域间路由选择是自治系统之间的路由选择，当源主机和目的主机不在同一个自治系统时，当数据报传送到一个自治系统的边界时，就需要使用一种协议将路由选择信息传递到另一个自治系统中，常用BGP协议。</p>
+</li>
+</ul>
+<h3 id="路由选择协议与路由转发策略是否是一回事？路由器中路由表与转发表的区别？"><a href="#路由选择协议与路由转发策略是否是一回事？路由器中路由表与转发表的区别？" class="headerlink" title="路由选择协议与路由转发策略是否是一回事？路由器中路由表与转发表的区别？"></a>路由选择协议与路由转发策略是否是一回事？路由器中路由表与转发表的区别？</h3><ul>
+<li><p>路由选择协议解决的是如何获得路由表中的路由信息，指的是路由选择策略,路由选择涉及多个路由器。<br>路由转发策略指路由器根据转发表将用户的 IP 数据报从合适的端口转发出去,涉及一个路由器。</p>
+</li>
+<li><p>区别：1）路由表一般包含从目的地址到下一跳的映射；转发表必须包含完成转发功能的所必需的信息。<br>2）路由表是根据路由选择算法得出的。而转发表是从路由表得出的。<br>3）路由表和转发表应采用不同的数据结构。路由表需要对网络拓扑变化的计算最优化，而转发表应当使得查找过程最优化。<br>4）路由表总是通过软件来实现，而转发表可用特殊的硬件实现。</p>
+</li>
+</ul>
+<hr>
+<p>2018 年 5月 5日</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/04/计算机网络数据链路层/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="马国航">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Macon's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/04/计算机网络数据链路层/" itemprop="url">计算机网络数据链路层</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-04T00:46:25+08:00">
+                2018-05-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机网络/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/05/04/计算机网络数据链路层/" class="leancloud_visitors" data-flag-title="计算机网络数据链路层">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h1><hr>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ol>
+<li>链路：从一个结点到相邻结点的一段物理线路（有线或无线），而中间没有其他任何的交换结点。</li>
+<li>数据链路： 在一条线路上传送数据时，除了要有物理线路，还要有一些必要的通信协议来控制这些数据的传输，若把实现这些协议的硬件和软件加到链路上，就构成了数据链路。最常用的办法是使用网络适配器实现这些协议。</li>
+<li>帧：点对点信道的数据链路层的协议数据单元，就是对网络层下发的IP数据报的添加首部和尾部封装成帧。</li>
+<li>MTU（Maximum Transfer Unit，最大传送单元）：将IP数据报封装成帧，利用帧首部和尾部进行帧定界。为了提高传输效率，应当使得数据部分长度尽量大于首部和尾部的长度和，但是每种数据链路层协议都规定了所传送帧的数据部分长度上限，即最大传送单元。</li>
+<li>误码率BER(Bit Error Rate）：现实的通信链路都不会太理想，传输过程中可能存在比特差错，比如0变成1，1变成0。误码率指的是在一段时间内，传输错误的比特占传输比特总数的比率。</li>
+<li>PPP（Point to Point Protocol）：对于点对点链路，简单的点对点协议PPP是目前使用最广泛的数据链路层协议。</li>
+<li>CSMA/CD（Carrier Sense Multiple Access/Collision Detect）：带碰撞检测的载波监听多路访问协议。</li>
+<li>FCS：帧检验序列，用于检测帧在传输过程中是否出错，可用CRC算法生成。</li>
+<li>曼彻斯特编码：以太网发送的数据采用曼彻斯特编码，在每个码元中间会出现一次电压转换，接收端可以利用这种电压的转换将位同步信号提取出来。通过曼彻斯特编码，在以太网帧中不需要指定帧长度，因为当不出现电压跳变时，向前查4个字节的FCS就可以找到数据字段的结束位置。</li>
+<li>争用期：在使用CSMA/CD协议的广播信道中，要实现碰撞检测，当端到端传播时延为τ时，那至多2τ时间就可以检测到是否发生碰撞，当经过这么长时间还未检测到碰撞就可以肯定这次发送不会产生碰撞。</li>
+<li>集线器Hub：工作在物理层，用于组以太网。集线器组的以太网逻辑上依然是总线型网络，还是用CSMA/CD协议。</li>
+<li>MAC（Media Access Control）媒体接入控制：局域网中，硬件地址又称为物理地址或MAC地址。</li>
+<li>网桥：工作在数据链路层，根据MAC帧的目的地址转发收到的帧，适用于用户数不多的通信量不太大的网络，否则发送的广播包太多，就会产生广播风暴。</li>
+<li>交换机：足够多接口的网桥就成为了今天的交换机，各个接口直接接计算机，具有存储转发功能，使抓包工具无效，更安全，更高效（无冲突，排队等待），可设置全双工工作方式。</li>
+<li>单播：收到的帧的MAC地址与本站的MAC地址相同。</li>
+<li>组播：发送给本局域网一部分站点的帧。</li>
+<li>广播：发送给本局域网所有站点的帧（全1地址）。</li>
+<li>VLAN（Virtual Local Area Network）虚拟局域网：是一些局域网网段构成的与物理位置无关的逻辑组，交换机的出现使得VLAN成为可能，每个VLAN帧都有一个标识来表明是来自哪个VLAN的帧。</li>
+<li>CSMA/CA：带冲突避免的载波监听多路访问协议，用于无线局域网的数据传输。</li>
+<li>接入点AP：基本服务集BSS中的基站。</li>
+<li>分配系统DS：使扩展服务集ESS对上层的表现就像一个基本服务集BSS一样。</li>
+<li>服务集标识符SSID：无线局域网的名字。</li>
+<li>基本服务集BSS与扩展服务集ESS：构成无线局域网的最小构件是BSS，ESS是多个多个BSS通过分布系统互联起来的。</li>
+<li>热点：向公众提供有偿或无偿接入WIFI的地方。</li>
+<li>移动自组网络：无固定基础设施的无线局域网。</li>
+<li>802.11：无线局域网的协议标准。</li>
+</ol>
+<h2 id="问答"><a href="#问答" class="headerlink" title="问答"></a>问答</h2><h3 id="数据链路层的三个基本任务是什么？如何实现？？"><a href="#数据链路层的三个基本任务是什么？如何实现？？" class="headerlink" title="数据链路层的三个基本任务是什么？如何实现？？"></a>数据链路层的三个基本任务是什么？如何实现？？</h3><ul>
+<li>封装成帧：在一段数据的前后分别添加首部和尾部，那么接收端在收到物理层上交的比特流后，就可以根据首部和尾部的标记，从收到的比特流中识别帧的开始和结束。</li>
+<li>透明传输：透明传输指的是无论什么样的比特组合的数据，都能按照原样无差错的通过这个数据链路层，数据链路层对于这些数据来说是透明的。通过在数据中出现控制字符的前面添加转义字符，以及当在数据中出现转义字符前面也添加转义字符实现的。</li>
+<li>差错检测：使用CRC循环冗余检验实现。</li>
+</ul>
+<h3 id="数据链路层使用的信道分类"><a href="#数据链路层使用的信道分类" class="headerlink" title="数据链路层使用的信道分类"></a>数据链路层使用的信道分类</h3><ul>
+<li>点对点信道</li>
+<li>广播信道</li>
+</ul>
+<h3 id="CRC循环冗余检验的工作原理"><a href="#CRC循环冗余检验的工作原理" class="headerlink" title="CRC循环冗余检验的工作原理"></a>CRC循环冗余检验的工作原理</h3><p>在要传送的二进制数据M末尾添加n位0，相当于M乘以2的n次方。然后设置除数为n+1位的双方事先约定好的二进制数，做模二运算，然后得到n位的余数添加到原数据M末尾。将帧传送出去。接收方收到数据，将其除以约定好的n+1位数字做模二运算，如果余数为0，则认为传输过程中无差错，否则出现差错予以丢弃。</p>
+<h3 id="什么是PPP协议？用于何种信道的链路层控制？PPP的工作原理。"><a href="#什么是PPP协议？用于何种信道的链路层控制？PPP的工作原理。" class="headerlink" title="什么是PPP协议？用于何种信道的链路层控制？PPP的工作原理。"></a>什么是PPP协议？用于何种信道的链路层控制？PPP的工作原理。</h3><ul>
+<li>PPP协议是用于点对点信道的数据链路层协议，比如接入到ISP就使用PPP协议。</li>
+<li>当用户拨号接入 ISP 时，路由器的调制解调器对拨号做出确认，并建立一条物理连接。<br>PC 机向路由器发送一系列的 LCP 分组（封装成多个 PPP 帧）。<br>这些分组及其响应选择一些 PPP 参数，进行接入鉴别和进行网络层配置，NCP 给新接入的 PC机分配一个临时的 IP 地址，使 PC 机成为因特网上的一个主机。<br>通信完毕时，NCP 释放网络层连接，收回原来分配出去的 IP 地址。接着，LCP 释放数据链路层连接。最后释放的是物理层的连接。</li>
+</ul>
+<h3 id="以太网的链路控制如何实现？"><a href="#以太网的链路控制如何实现？" class="headerlink" title="以太网的链路控制如何实现？"></a>以太网的链路控制如何实现？</h3><p>为了通信的方便，以太网的链路控制采用灵活的无连接操作方式，即不用像PPP一样得先在两点之间建立链路连接，而是直接就可以发送数据，对数据帧不进行编号，也不要求对方发回确认。但这是基于CSMA/CD协议和以太网的信道质量好的情况。</p>
+<h3 id="从数据链路层任务的角度看，PPP与以太网有何区别？为什么以太网可以不需要帧定界及传输前对数据进行转义（字符填充）？"><a href="#从数据链路层任务的角度看，PPP与以太网有何区别？为什么以太网可以不需要帧定界及传输前对数据进行转义（字符填充）？" class="headerlink" title="从数据链路层任务的角度看，PPP与以太网有何区别？为什么以太网可以不需要帧定界及传输前对数据进行转义（字符填充）？"></a>从数据链路层任务的角度看，PPP与以太网有何区别？为什么以太网可以不需要帧定界及传输前对数据进行转义（字符填充）？</h3><p>最主要也是最明显的区别就是两者对接收到的IP数据包的进行封装成帧的方式不同。<br>PPP帧的帧定界用来表示的是帧的开始和结束，和转义字符一起用以保证传输的透明性。而对于以太网来说，由于采用的是曼彻斯特编码，接收方可以很容易的找到以太网帧的结束位置（再往前数4字节FCS字段便可知数据段结束位置），而在传输媒体上实际传送是会增加8个字节，包含了前同步码和帧开始界定符，这样接收方也可以很容易知道帧的开始位置（往后数22个字节便是数据段开始位置），因此，接收方可以很容易地得到IP数据报，也就实现了透明传输，不必再需要帧定界和转义字符。</p>
+<h3 id="CSMA-CD工作原理"><a href="#CSMA-CD工作原理" class="headerlink" title="CSMA/CD工作原理"></a>CSMA/CD工作原理</h3><pre><code>1. 适配器从网络层获得一个分组，加上以太网的首部和尾部后，组成以太网帧，放入缓存准备发送。
+2. 若适配器检测到信道空闲，并在96比特时间内信道保持空闲，就发送这个帧。若检测到信道忙，不停检测直至信道空闲。
+3. 在发送过程中继续检测信道，若未检测到碰撞，就顺利把这个帧成功发送完毕。若检测到碰撞，便中止发送，并发送人工干扰信号。
+4. 在中止发送后，适配器执行指数退避算法，等待r倍的512比特时间后，返回步骤2继续监测信道。重传16次还不能成功，就停止重传并向上报错。
+</code></pre><h3 id="以太网的拓扑结构"><a href="#以太网的拓扑结构" class="headerlink" title="以太网的拓扑结构"></a>以太网的拓扑结构</h3><p>由最初的总线型逐渐转变为现在使用最广泛的星型结构。</p>
+<h3 id="为什么说使用集线器的星型以太网本质上仍然是总线网？"><a href="#为什么说使用集线器的星型以太网本质上仍然是总线网？" class="headerlink" title="为什么说使用集线器的星型以太网本质上仍然是总线网？"></a>为什么说使用集线器的星型以太网本质上仍然是总线网？</h3><p>因为集线器使用电子器件来模拟实际电缆线的工作，虽然表面上看是星型结构，但是使用集线器的以太网各站依然共享逻辑上的总线，适配器使用的还是CSMA/CD协议，并在同一时刻至多只允许一个站发送数据。</p>
+<h3 id="以太网物理地址-MAC-的结构。"><a href="#以太网物理地址-MAC-的结构。" class="headerlink" title="以太网物理地址(MAC)的结构。"></a>以太网物理地址(MAC)的结构。</h3><p>6个字节（48位）：IEEE的注册管理机构RA负责向厂家分配地址字段的前三个字节(即高位24位)。<br>地址字段中的后三个字节(即低位24位)由厂家自行指派，称为扩展标识符，必须保证生产出的适配器没有重复地址。</p>
+<h3 id="以太网帧格式，最小最大帧长？"><a href="#以太网帧格式，最小最大帧长？" class="headerlink" title="以太网帧格式，最小最大帧长？"></a>以太网帧格式，最小最大帧长？</h3><p><img src="https://github.com/CyC2018/Interview-Notebook/blob/master/pics/50d38e84-238f-4081-8876-14ef6d7938b5.jpg" alt="MAC帧"></p>
+<p>6字节的目的地址，6字节的源地址，2字节对数据字段类型的说明代号，然后是46到1500字节的数据部分，最后是4字节的FCS帧检验序列（使用CRC检验）。</p>
+<h3 id="以太网在物理层的扩展手段有那些？在数据链路层的扩展手段有哪些？"><a href="#以太网在物理层的扩展手段有那些？在数据链路层的扩展手段有哪些？" class="headerlink" title="以太网在物理层的扩展手段有那些？在数据链路层的扩展手段有哪些？"></a>以太网在物理层的扩展手段有那些？在数据链路层的扩展手段有哪些？</h3><ul>
+<li><strong>物理层扩展</strong>：a.使用一对光纤和一对光纤调制解调器；b.用多个集线器构成多级星型结构的以太网。</li>
+<li><strong>数据链路层扩展</strong>：最初使用网桥，现在广泛使用交换机进行扩展。</li>
+</ul>
+<h3 id="网桥、交换机的工作原理。透明网桥的工作原理。网桥、交换机与集线器的区别。"><a href="#网桥、交换机的工作原理。透明网桥的工作原理。网桥、交换机与集线器的区别。" class="headerlink" title="网桥、交换机的工作原理。透明网桥的工作原理。网桥、交换机与集线器的区别。"></a>网桥、交换机的工作原理。透明网桥的工作原理。网桥、交换机与集线器的区别。</h3><ul>
+<li><strong>网桥工作原理</strong>:当网桥接收到一个MAC帧时，先存储帧并检查此帧的目的MAC地址，查找转发表，然后进行转发；转发之前要执行CSMA/CD算法。</li>
+<li><strong>交换机工作原理</strong>：实质为多接口网桥。多数仍是采用存储转发方式进行转发。也有少量采用直通方式（不进行差错检测）。</li>
+<li><strong>区别</strong>：1. 集线器在转发帧时，不对传输媒体进行检测。2.网桥在转发帧之前必须执行 CSMA/CD 算法。3.交换机每个接口都直接与主机相连，并且一般都工作在全双工方式。能像独占通信媒体那样，进行无碰撞地传输数据。</li>
+</ul>
+<h3 id="有哪些高速以太网技术？高速以太网与传统以太网技术上有什么区别和联系？"><a href="#有哪些高速以太网技术？高速以太网与传统以太网技术上有什么区别和联系？" class="headerlink" title="有哪些高速以太网技术？高速以太网与传统以太网技术上有什么区别和联系？"></a>有哪些高速以太网技术？高速以太网与传统以太网技术上有什么区别和联系？</h3><pre><code>1. 快速以太网（100BASE-T 以太网）：
+a.采用802.3u标准，可在全双工方式下工作而无冲突发生。
+b.MAC帧格式仍然是规定的。保持最短帧长64字节不变,但将一个网段的最大电缆长度减小到100m。
+c.帧间时间间隔从原来的9.6微秒改为现在的0.96微秒，争用期5.12微秒。
+2. 吉比特以太网：
+a.允许在1Gb/s下全双工和半双工两种方式工作。
+b.在半双工方式下使用CSMA/CD协议（全双工方式不需要使用CSMA/CD协议）。
+3. 10吉比特以太网：只工作在全双工方式，因此没有争用问题，也不使用 CSMA/CD 协议。
+</code></pre><h3 id="VLAN的技术特点和用途？"><a href="#VLAN的技术特点和用途？" class="headerlink" title="VLAN的技术特点和用途？"></a>VLAN的技术特点和用途？</h3><pre><code>特点：虚拟局域网其实只是局域网给用户提供的一种服务，而并不是一种新型局域网。每一个VLAN的帧都有一个明确的标识符，指明发送这个帧的工作站是属于哪一个VLAN。
+
+用途：虚拟局域网限制了接收广播信息的工作站数，使得网络不会因传播过多的广播信息(即“广播风暴”)而引起性能恶化。另外，VLAN是用户和网络资源的逻辑组合，可按照需要对有关设备和资源非常方便的重新组合，使用户从不同的服务器或数据库中存取所需的资源。
+</code></pre><h3 id="无线局域网包括哪两种类型？有固定设施的无线局域网的组成？移动站与AP的关联方法有几种？"><a href="#无线局域网包括哪两种类型？有固定设施的无线局域网的组成？移动站与AP的关联方法有几种？" class="headerlink" title="无线局域网包括哪两种类型？有固定设施的无线局域网的组成？移动站与AP的关联方法有几种？"></a>无线局域网包括哪两种类型？有固定设施的无线局域网的组成？移动站与AP的关联方法有几种？</h3><ul>
+<li>一种是有固定基础设施的，一种是无固定基础设施的，又叫做自组网络。</li>
+<li><strong>组成</strong>：这种无线局域网的最小构件是基本服务集BSS(Basic Service Set)，一个基本服务集又包含一个基站和若干个移动站。一个基本服务集可以孤立存在，也可以通过接入点AP连接到一个分配系统DS，然后再连接到另一个基本服务集，这样就构成了一个扩展的服务集ESS。</li>
+<li><strong>关联方法</strong>：一种是被动扫描，移动站等待接收接入点AP周期性发出的信标帧，信标帧中含有若干系统参数（SSID和支持速率）；另一种是主动扫描，移动站主动发出探测请求帧，然后等待从接入点发回的探测响应帧。</li>
+</ul>
+<h3 id="什么是802-11局域网的隐蔽站、暴露站问题？CSMA-CA工作原理。与有线以太网CSMA-CD协议相比有何异同？"><a href="#什么是802-11局域网的隐蔽站、暴露站问题？CSMA-CA工作原理。与有线以太网CSMA-CD协议相比有何异同？" class="headerlink" title="什么是802.11局域网的隐蔽站、暴露站问题？CSMA/CA工作原理。与有线以太网CSMA/CD协议相比有何异同？"></a>什么是802.11局域网的隐蔽站、暴露站问题？CSMA/CA工作原理。与有线以太网CSMA/CD协议相比有何异同？</h3><ul>
+<li><strong>隐蔽站问题</strong>：当A与C都想向B通信，由于A与C之间相距过远，彼此听不见对方。当A和C检测到信道空闲时，就向B发送数据，结果发生碰撞。这种未能检测到信道上其他站点信号的问题叫做隐蔽站问题。检测到信道空闲，其实信道并不空闲。</li>
+<li><strong>暴露站问题</strong>：B向A发送数据，C想和D通信，但C检测到信道忙，就不敢和D通信。这种问题叫做暴露站问题。检测到信道忙，其实信道并不忙。</li>
+<li><strong>CSMA/CA</strong>(带碰撞避免的载波监听多路访问协议)：a.欲发送数据的站先检测信道。在 802.11 标准中规定了在物理层的空中接口进行物理层的载波监听。<br>b.通过收到的相对信号强度是否超过一定的门限数值就可判定是否有其他的移动站在信道上发送数据。c.<br>当源站发送它的第一个 MAC 帧时，若检测到信道空闲，则在等待一段时间 DIFS 后就可发送。  </li>
+<li><strong>异同</strong>：相同点在于都使用载波监听多路访问，在发送数据前先对媒体进行载波监听，判断信道空闲才发送数据。区别是有线以太网采用碰撞检测的手段，使用二进制退避算法来计算重传的时间，但不保证不会发生碰撞；而无线局域网因其无线信道本身的能够向所有方向传播并且传播距离受限的特点不需要进行碰撞检测，而是要通过技术手段尽量避免碰撞的产生。</li>
+</ul>
+<h3 id="在存在AP的802-11无线局域网中，两台移动站之间通讯，发送站是否可将数据帧直接发给接收站？"><a href="#在存在AP的802-11无线局域网中，两台移动站之间通讯，发送站是否可将数据帧直接发给接收站？" class="headerlink" title="在存在AP的802.11无线局域网中，两台移动站之间通讯，发送站是否可将数据帧直接发给接收站？"></a>在存在AP的802.11无线局域网中，两台移动站之间通讯，发送站是否可将数据帧直接发给接收站？</h3><p>所有的站在本BSS内都可以直接通信，所以答案是肯定的。只有在和本BSS以外的站进行通信的时候，才需要经过基站。</p>
+<hr>
+<p>2018 年 5月 4日</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/计算机网络物理层/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="马国航">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Macon's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/计算机网络物理层/" itemprop="url">计算机网络物理层</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T00:46:25+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机网络/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/05/03/计算机网络物理层/" class="leancloud_visitors" data-flag-title="计算机网络物理层">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h1><hr>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ol>
+<li>数据：通信的目的是传输消息，如语音、文字、图像等。数据就是运送消息的实体，是使用特定方式表示的信息，通常是有意义的符号序列，这种信息的表示可由计算机或者其他机器处理或产生。</li>
+<li>信号：是数据的电气或者电磁表现。</li>
+<li>码元：使用时域的波形表示数字信号时，代表不同离散数值的基本波形称为码元。码元携带信息量并非固定，而是由调制方式和编码方式决定的。</li>
+<li>单工：根据通信双方的信息交互方式确定的三种基本方式其一，又称为单工通信，只能有一个方向的通信而没有反方向交互。比如无线电广播，有线电广播和电视广播就属于这种。</li>
+<li>半双工：双向交替通信，通信双方都可以发送消息，但不能同时发送或接收。比如对讲机。</li>
+<li>全双工：通信双方可以同时收发消息。</li>
+<li>基带信号：基本频带信号，来自信源的信号。比如计算机输出的代表各种文字或者图像文件的数据信号，包含较多低频成分，甚至有直流成分，许多信道并不能传输这种低频和直流分量，就需要对基带信号进行调制。</li>
+<li>带通信号：</li>
+<li>调制：需要知道的是，调制分为两大类。一类为基带调制，对基带信号的波形变换后还是数字信号，但是这种信号可以适应信道的传输，人们也愿意将这种调制叫做编码，因为输出的还是数字信号；而另一类调制就需要使用载波(carrier)进行调制，将基带信号的频率范围搬移到较高的频段，并转换为模拟信号，经过载波调制后的信号称为带通信号，而使用载波的调制就叫做带通调制。</li>
+<li>信噪比：信号的平均功率和噪声的平均功率的比值，常记为S/N,并用分贝作为度量单位。信噪比=10log10（S/N），香农公式表明信道极限传输速率C=Wlog2（1+S/N）（bit/s）。</li>
+<li>信道复用：复用是通信技术中的基本概念，在计算机网络的信道中广泛使用各种复用技术。使用复用器和分用器加以实现。</li>
+<li>PCM：脉冲编码调制，存在E1和T1两个标准，中国采用的是E1标准</li>
+<li>比特率：数据的传输速率。C（比特率）=B（波特率）log2N（传输系统中码元的种类数）</li>
+<li>波特率：码元传输速率，单位时间内码元传输的极限数。</li>
+<li>ADSL(Asymmetric digital subscriber line)：非对称数字用户线,下行带宽远大于上行带宽，故称之为非对称。</li>
+<li>xDSL：VDSL用于短距离传送，比ADSL更快，诸如此类的还有用于企业的对称数字用户线SDSL，HDSL(High speed Digital Subscriber Line)用一对线或者两对线的对称DSL。都可以记为xDSL。</li>
+</ol>
+<h2 id="问答"><a href="#问答" class="headerlink" title="问答"></a>问答</h2><h3 id="物理层的任务"><a href="#物理层的任务" class="headerlink" title="物理层的任务"></a>物理层的任务</h3><p>确定与传输媒体的接口有关的一些特性，即机械特性、电气特性、功能特性和过程特性。</p>
+<h3 id="数据通信系统的构件及相应用途？"><a href="#数据通信系统的构件及相应用途？" class="headerlink" title="数据通信系统的构件及相应用途？"></a>数据通信系统的构件及相应用途？</h3><p>划分为三大部分，即源系统，传输系统和目的系统。</p>
+<ul>
+<li><strong>源系统</strong>：包含源点和发送器两部分，源点产生要传输的数据，发送器对源点生成的比特流编码后才能在传输系统中传输，常见的发送器就是调制器。</li>
+<li><strong>目的系统</strong>：包含接收器和终点两部分，接受器接收传输系统传送过来的信号，并将之转换为能被目的设备处理的信息，常见的接收器就是解调器，对模拟信号进行解调产生数字信号；终点设备接收接收器传送过来的数字比特流，将信息输出。</li>
+<li><strong>传输系统</strong>：可以是简单的传输线，也可以是连接在源系统和目的系统之间的复杂网络系统。用于在源系统和目的系统之间传输模拟信号。</li>
+</ul>
+<h3 id="物理层对基带信号有哪几种基本调制方法，各有什么特点？"><a href="#物理层对基带信号有哪几种基本调制方法，各有什么特点？" class="headerlink" title="物理层对基带信号有哪几种基本调制方法，各有什么特点？"></a>物理层对基带信号有哪几种基本调制方法，各有什么特点？</h3><p>分为基带调制和带通调制</p>
+<ul>
+<li><strong>基带调制</strong>：对基带信号的波形进行变换，使之能够与信道特性相适应，变换后的信号依然是基带信号，只是将数字信号变换为另一种形式的数字信号。</li>
+<li><strong>带通调制</strong>：使用载波进行调制，将基带信号的频率范围搬移到较高的频段，并转化为模拟信号使之可以很好地在模拟信道中传输。</li>
+</ul>
+<h3 id="奈氏准则？理想信道的码元传输速率上限？"><a href="#奈氏准则？理想信道的码元传输速率上限？" class="headerlink" title="奈氏准则？理想信道的码元传输速率上限？"></a>奈氏准则？理想信道的码元传输速率上限？</h3><p>在任何信道中，码元传输的速率是有上限的，传输速率超过此上限，就会出现严重的码间串扰问题，使得接收端对码元的判决成为不可能。传输速率上限B=2W，其中W为信道带宽，单位为Hz，B单位为波特Baud。一波特不一定等于一比特，要看一个码元携带的信息量，也即二进制数的位数。</p>
+<h3 id="香农公式？用途？实际信道的信息传输速率上限如何定义？"><a href="#香农公式？用途？实际信道的信息传输速率上限如何定义？" class="headerlink" title="香农公式？用途？实际信道的信息传输速率上限如何定义？"></a>香农公式？用途？实际信道的信息传输速率上限如何定义？</h3><ul>
+<li><strong>香农公式</strong>：信道的极限信息传输速率C为C=Wlog2（1+S/N）</li>
+<li><strong>用途</strong>：只要信息传输速率低于信道的极限信息传输速率，就一定可以找到某种办法来实现无差错的传输。 </li>
+<li><strong>实际信道中</strong>，信息传输速率上限要比香农极限速率低不少，这是因为实际信道中，信号还要受到其他一些损伤，如各种脉冲干扰和在传输中产生的失真。</li>
+</ul>
+<h3 id="常用的导向传输媒体？"><a href="#常用的导向传输媒体？" class="headerlink" title="常用的导向传输媒体？"></a>常用的导向传输媒体？</h3><p>双绞线，同轴电缆，光缆和架空明线。</p>
+<h3 id="网络通讯中使用的光纤分类"><a href="#网络通讯中使用的光纤分类" class="headerlink" title="网络通讯中使用的光纤分类"></a>网络通讯中使用的光纤分类</h3><p>单模光纤和多模光纤</p>
+<h3 id="物理层的信道复用技术？各有何技术特点？"><a href="#物理层的信道复用技术？各有何技术特点？" class="headerlink" title="物理层的信道复用技术？各有何技术特点？"></a>物理层的信道复用技术？各有何技术特点？</h3><ul>
+<li>频分复用：频分复用的所有用户在相同时间里占用不同的带宽（频率带宽）资源。</li>
+<li>时分复用：时分复用则是将时间划分为一段段等长的时分复用帧（TDM 帧）。每一个时分复用的用户在每一个 TDM 帧中占用固定序号的时隙。<br>时分复用的所有用户在不同的时间里占用同样的频带宽度。</li>
+<li>统计时分复用：是改进的时分复用技术，明显提高信道利用率。</li>
+<li>波分复用：光的频分复用。</li>
+<li>码分复用：各用户使用经过特殊挑选的不同码型，因此彼此不会造成干扰。<br>这种系统发送的信号有很强的抗干扰能力，其频谱类似于白噪声，不易被敌人发现。 </li>
+</ul>
+<h3 id="一个标准的数字语音传输速率是多少？"><a href="#一个标准的数字语音传输速率是多少？" class="headerlink" title="一个标准的数字语音传输速率是多少？"></a>一个标准的数字语音传输速率是多少？</h3><p>64kbps</p>
+<h3 id="ADSL的特点"><a href="#ADSL的特点" class="headerlink" title="ADSL的特点"></a>ADSL的特点</h3><ul>
+<li>上行和下行带宽做成不对称的。</li>
+<li>上行指从用户到 ISP，而下行指从 ISP 到用户。</li>
+<li>ADSL 在用户线（铜线）的两端各安装一个 ADSL 调制解调器。</li>
+<li>我国目前采用的方案是离散多音调 DMT (Discrete Multi-Tone)调制技术。这里的“多音调”就是“多载波”或“多子信道”的意思</li>
+</ul>
+<hr>
+<p>2018 年 5月 3日</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/计算机网络概述/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="马国航">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Macon's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/计算机网络概述/" itemprop="url">计算机网络概述</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T00:46:25+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机网络/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/05/03/计算机网络概述/" class="leancloud_visitors" data-flag-title="计算机网络概述">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><hr>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ol>
+<li>ARPANET: 美国国防部创建的第一个分组交换网（单个网络，不互连）</li>
+<li>结点：位于网络中的结点可以是计算机，集线器，路由器，交换机等。</li>
+<li>链路：从一个结点到相邻结点的一段物理线路（有线或无线），而中间没有其他任何的交换结点。</li>
+<li>主机：与网络互连的计算机。</li>
+<li>ISP(Internet Service Provider):互联网的服务提供商。</li>
+<li>RFC(Request For Comments):为了便于制定互联网标准，利于互联网推广，而衍生出的请求评论文档，，任何用户都可以下载，并非所有的RFC文档都会称为互联网标准。</li>
+<li>端系统：处在互联网边缘的部分就是连接在互联网上的所有主机，这些主机又称为端系统。</li>
+<li>分组：把要发送的整块数据称为一个报文(message)。发送报文前，先将报文划分成一个个更小的等长数据段，在每一个数据段前面加上一些控制信息组成的首部，就构成一个分组(packet)，又叫做包。</li>
+<li>存储转发：分组交换就利用了存储转发技术。例如当路由器收到一个分组，会暂时进行存储，通过查找路由表转发分组到下一个路由器，下一个路由器也按照同样的方式进行存储转发直至到达目的主机。</li>
+<li>带宽： 阐述带宽的概念之前，先要了解数据率的概念。数据率是网络中数据的传输速率，以bit/s为单位，产说的网络速率是指额定速率或者标称速率。而带宽在计算机网络中用来表示单位时间某信道所能通过的最高数据率。</li>
+<li>吞吐量：吞吐量是单位时间内通过某网络或者信道等的实际数据量，经常用于对现实世界网络的一种测量。</li>
+<li>时延：数据从网络一端传送到另一端所需要的时间。由发送时延、传播时延、处理时延和排队时延四大部分组成。重点区分发送时延和传播时延，常说的光纤信道的传输速率高是指可以用很高的速率向光纤信道发送数据，而光纤的传播速率甚至比铜线还要低一些。</li>
+<li>时延带宽积：将传播时延和带宽相乘，就得到时延带宽积。表示的是以比特为单位的链路长度。</li>
+<li>实体：研究开放系统的信息交换时，使用实体这一抽象概念表示任何可发送或者接收信息的硬件或者软件进程。许多情况下，就是一个特定的软件模块。</li>
+<li>协议：控制两个对等实体（或多个实体）进行通信的规则集合。包含语法和语义两个方面，语法规定了信息格式，语义定义了需要进行的操作。</li>
+<li>服务：在网络分层体系结构中，可被上层看到的功能叫做服务，下层向上层通过层间接口提供的。本层为上层提供服务，又要使用下层为本层提供的服务。</li>
+<li>服务访问点(Service Access Point)：同一系统中相邻两层的实体进行交换信息的地方。</li>
+<li>PDU(Protocol Data Unit):OSI参考模型把对等层次之间传送的数据单位叫做该层的协议数据单元。</li>
+</ol>
+<hr>
+<h2 id="问答"><a href="#问答" class="headerlink" title="问答"></a>问答</h2><h3 id="从工作方式看，因特网如何组成？"><a href="#从工作方式看，因特网如何组成？" class="headerlink" title="从工作方式看，因特网如何组成？"></a>从工作方式看，因特网如何组成？</h3><p>互联网的拓扑结构虽然非常复杂，但从其工作方式看，可分为以下两大块：</p>
+<ul>
+<li><strong>边缘部分</strong>：由所有连接在互联网上的主机组成。用户直接使用，进行通信和资源共享。</li>
+<li><strong>核心部分</strong>：由大量网络和连接这些网络的路由器组成。为边缘部分提供服务。</li>
+</ul>
+<h3 id="边缘端系统运行的程序之间通信方式有几种，工作方式如何？"><a href="#边缘端系统运行的程序之间通信方式有几种，工作方式如何？" class="headerlink" title="边缘端系统运行的程序之间通信方式有几种，工作方式如何？"></a>边缘端系统运行的程序之间通信方式有几种，工作方式如何？</h3><p>通常划分为两大类：客户-服务器方式（C/S方式）和对等方式（P2P方式）。</p>
+<ul>
+<li><p><strong>客户-服务器方式</strong>：client和server是通信过程中涉及的两个进程，描述进程间服务与被服务的关系，主要特征是<strong>客户是服务请求方，服务器是服务提供方</strong>。</p>
+</li>
+<li><p><strong>对等连接方式</strong>：两台主机通信时并不区分服务请求方和服务提供方。只要主机运行了对等连接软件，就可以进行平等的对等连接通信。</p>
+</li>
+</ul>
+<h3 id="因特网的核心部分的主要功能？由何种部件构成？"><a href="#因特网的核心部分的主要功能？由何种部件构成？" class="headerlink" title="因特网的核心部分的主要功能？由何种部件构成？"></a>因特网的核心部分的主要功能？由何种部件构成？</h3><ul>
+<li><strong>主要功能</strong>：向网络边缘中的大量主机提供连通性，使得边缘部分中的任何一台主机都可以向其他主机通信。</li>
+<li><strong>构成</strong>：在核心部分中，路由器有着特殊的作用，是实现分组交换的关键构件，采用<strong>存储转发</strong>方式转发收到的分组。</li>
+</ul>
+<h3 id="报文交换，电路交换，分组交换的特征、优缺点？因特网的通讯模式？"><a href="#报文交换，电路交换，分组交换的特征、优缺点？因特网的通讯模式？" class="headerlink" title="报文交换，电路交换，分组交换的特征、优缺点？因特网的通讯模式？"></a>报文交换，电路交换，分组交换的特征、优缺点？因特网的通讯模式？</h3><ul>
+<li><strong>报文交换</strong>： <strong>整个</strong>报文先传送到相邻结点，全部存储下来后查找转发表，转发到下一个结点。</li>
+<li><strong>电路交换</strong>：整个报文的比特流<strong>连续</strong>从源点直达终点，好像在一个管道传输。</li>
+<li><strong>分组交换</strong>：报文的一部分（即单个分组）传送到相邻结点，存储下来后查找转发表，转发到下一个结点。</li>
+<li><strong>优缺点</strong>：当传送大量数据且数据传送时间远大于建立连接时间，那么电路交换的传输速率较快，比如电话；而报文交换和分组交换不需要预先分配传输带宽，传送突发数据时网络的信道利用率较高；分组的长度又远小于报文长度，因此分组交换的时延较小，灵活性好。</li>
+<li>因特网采用分组交换。</li>
+</ul>
+<h3 id="分组交换中，数据传输的单元叫什么？结构和工作特点如何？"><a href="#分组交换中，数据传输的单元叫什么？结构和工作特点如何？" class="headerlink" title="分组交换中，数据传输的单元叫什么？结构和工作特点如何？"></a>分组交换中，数据传输的单元叫什么？结构和工作特点如何？</h3><p>数据传输的单元叫做分组，由报文拆分成数据段后加首部形成。由于首部包含目的地址和源地址，每个分组在互联网中独立选择传输路径，并被正确交付到分组传输的终点。</p>
+<h3 id="几种时延定义？解决方案？提高整体效率原则？"><a href="#几种时延定义？解决方案？提高整体效率原则？" class="headerlink" title="几种时延定义？解决方案？提高整体效率原则？"></a>几种时延定义？解决方案？提高整体效率原则？</h3><ul>
+<li><strong>发送时延</strong>： 主机或者路由器发送数据帧所需要的时间。数据帧长度/发送速率。</li>
+<li><strong>传播时延</strong>：电磁波在信道中传播一定的距离耗费的时间。信道长度/电磁波在信道中传播的速率。</li>
+<li><strong>处理时延</strong>：主机或者路由器收到分组花费的处理时间。分析首部，提取数据，差错检验等。</li>
+<li><strong>排队时延</strong>：分组在进入路由器需要在输入队列中等待处理，确定转发接口后，还需要在输出队列中排队等待转发，就产生了排队时延。</li>
+<li>提高整体效率并不能单一通过提高数据的发送速率或者传播速率，因为总时延由四部分组成，需要全部考虑在内。</li>
+</ul>
+<h3 id="信道利用率和网络利用率的区别？时延和网络利用率的关系？"><a href="#信道利用率和网络利用率的区别？时延和网络利用率的关系？" class="headerlink" title="信道利用率和网络利用率的区别？时延和网络利用率的关系？"></a>信道利用率和网络利用率的区别？时延和网络利用率的关系？</h3><ul>
+<li><strong>区别</strong>：信道利用率指的是某信道有百分之几的时间是被利用的（即有数据通过）；网络利用率是指全网络信道利用率的加权平均值。</li>
+<li><strong>关系</strong>:信道或者网络利用率过高会产生非常大的时延。D=D0/(1-U)。</li>
+</ul>
+<h3 id="网络协议的组成要素"><a href="#网络协议的组成要素" class="headerlink" title="网络协议的组成要素"></a>网络协议的组成要素</h3><p>主要由以下三个要素组成：</p>
+<ul>
+<li><strong>语法</strong>：数据和控制信息的结构和格式；</li>
+<li><strong>语义</strong>：需要发出何种控制信息，完成何种动作，做出何种响应；</li>
+<li><strong>同步</strong>：事件实现顺序的详细说明。</li>
+</ul>
+<h3 id="协议和分层对网络通讯的意义？分层模式下的同层通讯如何实现？"><a href="#协议和分层对网络通讯的意义？分层模式下的同层通讯如何实现？" class="headerlink" title="协议和分层对网络通讯的意义？分层模式下的同层通讯如何实现？"></a>协议和分层对网络通讯的意义？分层模式下的同层通讯如何实现？</h3><ul>
+<li>网络协议是计算机网络不可缺少的部分，要想让连接在网络上的另一台计算机做点什么事情，就需要有协议。</li>
+<li>分层有很多好处：各层之间独立；灵活性好；结构上可分割开；易于实现和维护；促进标准化工作。</li>
+</ul>
+<h3 id="TCP-IP协议的体系结构"><a href="#TCP-IP协议的体系结构" class="headerlink" title="TCP/IP协议的体系结构"></a>TCP/IP协议的体系结构</h3><p>只有四层，包含应用层，传输层，网际层和网络接口层。</p>
+<hr>
+<p>2018 年 5月 3日</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/12/DOM事件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -281,7 +1169,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/01/12/DOM事件/" itemprop="url">DOM事件</a></h1>
+                <a class="post-title-link" href="/2018/01/12/DOM事件/" itemprop="url">DOM</a></h1>
         
 
         <div class="post-meta">
@@ -333,7 +1221,7 @@
 
           
           
-             <span id="/2018/01/12/DOM事件/" class="leancloud_visitors" data-flag-title="DOM事件">
+             <span id="/2018/01/12/DOM事件/" class="leancloud_visitors" data-flag-title="DOM">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1227,672 +2115,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/06/异步和单线程/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="马国航">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Macon's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/06/异步和单线程/" itemprop="url">异步和单线程</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-06T20:46:25+08:00">
-                2018-01-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/01/06/异步和单线程/" class="leancloud_visitors" data-flag-title="异步和单线程">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="一往无前，不忘初心"><a href="#一往无前，不忘初心" class="headerlink" title="一往无前，不忘初心"></a>一往无前，不忘初心</h2><hr>
-<p>谨以本系列文章记录我的js学习之路!</p>
-<p>我们首先来看一段代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">100</span>);</span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">200</span>)</span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">300</span>);</span><br></pre></td></tr></table></figure>
-<p>或许你觉得输出的结果应该是按照100，间隔一秒输出200，然后输出300的方式打印。但事实不然，正确的结果是100，300，间隔一秒输出200。</p>
-<p>同步和异步的区别在于有没有阻塞程序进行，上面说的后者就没有阻塞程序的进行，这就是所谓的异步。</p>
-<p>程序正常执行过程中，由于JS的单线程特性，一次不可以执行多个任务。在遇到异步代码的时候，会将异步代码放到任务队列里面，只有任务队列通知主线程，某个异步任务可以执行了，该任务才会进入主线程执行。并且所有同步任务都在主线程上执行，形成一个执行栈，一旦“执行栈”所有同步任务执行完毕，系统才读取“任务队列”</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">100</span>);</span><br><span class="line">alert(<span class="number">200</span>); <span class="comment">// 一秒钟之后点击确认才继续执行</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">300</span>)</span><br></pre></td></tr></table></figure>
-<p>这个alert弹框就会阻塞程序，程序是同步进行的。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/06/异步和单线程/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/05/作用域和闭包/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="马国航">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Macon's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/05/作用域和闭包/" itemprop="url">作用域和闭包</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-05T20:46:25+08:00">
-                2018-01-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/01/05/作用域和闭包/" class="leancloud_visitors" data-flag-title="作用域和闭包">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="一往无前，不忘初心"><a href="#一往无前，不忘初心" class="headerlink" title="一往无前，不忘初心"></a>一往无前，不忘初心</h2><hr>
-<p>谨以本系列文章记录我的JS学习之路!</p>
-<ul>
-<li>函数声明和函数表达式是什么，又有什么区别呢？</li>
-</ul>
-<p>我们来看如下的代码：<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">fn();</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//声明</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn1();</span><br><span class="line"><span class="keyword">var</span> fn1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//表达式</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>我们知道函数声明和变量都会进行提升，在函数声明之前调用函数不会报错，因为编译器已经知道这个是一个函数了，可以调用。</p>
-<p>但是对于函数表达式来说，将函数表达式赋值给变量的时候，变量是得到提升了，但是赋值操作是在执行过程中进行的，所以这里在表达式执行之前，fn1变量其实是undefined的。调用就会报错。</p>
-<ul>
-<li>我们再来看一个例子：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">100</span>;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>如果你觉得输出的结果是undefined，那么恭喜你已经对提升有了较好的理解了。</p>
-<p>a作为一个全局变量得到了提升，在a未赋值之前，a都被认为是undefined。</p>
-<p>函数在执行之前就已经确定了this和arguments的值</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/05/作用域和闭包/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/04/了解web和网络基础/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="马国航">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Macon's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/04/了解web和网络基础/" itemprop="url">了解web和网络基础</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-04T20:46:25+08:00">
-                2018-01-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTTP/" itemprop="url" rel="index">
-                    <span itemprop="name">HTTP</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/01/04/了解web和网络基础/" class="leancloud_visitors" data-flag-title="了解web和网络基础">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="一往无前，不忘初心"><a href="#一往无前，不忘初心" class="headerlink" title="一往无前，不忘初心"></a>一往无前，不忘初心</h2><hr>
-<p>谨以本系列文章记录我的HTTP学习之路!</p>
-<p>概述建立WEB的技术，以及HTTP的产生和发展。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/04/了解web和网络基础/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/31/原型和原型链/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="马国航">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Macon's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/31/原型和原型链/" itemprop="url">原型和原型链</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-31T20:46:25+08:00">
-                2017-12-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/12/31/原型和原型链/" class="leancloud_visitors" data-flag-title="原型和原型链">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="一往无前，不忘初心"><a href="#一往无前，不忘初心" class="headerlink" title="一往无前，不忘初心"></a>一往无前，不忘初心</h2><hr>
-<p>谨以本系列文章记录我的js学习之路!</p>
-<p>构造函数大写字母开头，可以使用new操作符创建实例。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name=name</span><br><span class="line">  <span class="keyword">this</span>.age  = age</span><br><span class="line">  <span class="keyword">this</span>.class = <span class="string">'class-1'</span></span><br><span class="line">  <span class="comment">// return this默认返回this实例对象</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> f  = <span class="keyword">new</span> Foo(<span class="string">'zhnagsan'</span>, <span class="number">20</span>)</span><br></pre></td></tr></table></figure></p>
-<ol>
-<li>var a = {}是var a = new Object()的语法糖</li>
-<li>var a = []是var a = new Array()的语法糖</li>
-<li>function Foo(){}是var Foo = new Function(..)</li>
-<li>instanceof是用于判断引用类型属于哪个构造函数的方法。比如上述代码，f是Foo的一个实例，判断方法是f的<em>proto</em>属性，一层一层向上，能否对应到Foo的显式原型对象。f instanceof Object也是正确的，需要向上追溯两层。</li>
-<li><p>所有引用类型，包括数组对象函数都可以自由扩展属性（除了null对象）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;obj.a = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">var</span> arr = [];arr.a = <span class="number">100</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">fn.a = <span class="number">100</span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>都有一个<em>proto</em>（隐式原型）属性，为一个普通对象</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(obj._proto_);</span><br><span class="line"><span class="built_in">console</span>.log(arr._proto_);</span><br><span class="line"><span class="built_in">console</span>.log(fn._proto_);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>所有的函数都有一个prototype（显式原型）属性，是一个普通对象即原型对象；而原型对象有一个constructor属性，用来指定该对象的构造函数，比如M是个构造函数，那么M.prototype.constructor === M
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/31/原型和原型链/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1947,7 +2169,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1958,7 +2180,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1969,7 +2191,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
